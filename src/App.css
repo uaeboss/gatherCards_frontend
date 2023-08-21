@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #242424;
 }
 
 .content_container {
@@ -19,9 +18,16 @@
     "footer footer footer footer";
     border: 2px solid black;
 }
+
+.start_logo {
+  grid-area: start_logo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+}
 .header {
   grid-area: header;
-  border: 2px solid white;
 }
 .sidenav {
   grid-area: sidenav;
