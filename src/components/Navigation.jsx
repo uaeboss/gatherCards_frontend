@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import CardgameDropdown from "./CardgameDropdown";
 import Navigation_Profile from "./NavigationProfile";
-import logo from "../images/logo_white_name.png";
+import logo from "../assets/logo_white_name.png";
 import "./css/Navigation.css";
 
 const Navigation = () => {
