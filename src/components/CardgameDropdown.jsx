@@ -13,12 +13,16 @@ const CardgameDropdown = () => {
     setCardgameSelect(selectedOption.value);
     if (selectedOption.value === "magicthegathering") {
       setTopImage(logo)
-      console.log('des passt mit magic');
     } else {
       setTopImage(yugiohlogo)
-      console.log('ja nee, das ist yugioh');
     }
   };
+
+  const onClickHandler = () => {
+    setCardgameSelect(null);
+  }
+
+
 
   const options = [
     { value: "magicthegathering", label: "Magic the Gathering" },
@@ -37,7 +41,7 @@ const CardgameDropdown = () => {
       )}
       {cardgameSelect && (
         <>
-        <img id="max_width_img" src={topImage} alt="logomagic" />
+        <img id="max_width_img" src={topImage} alt="logomagic" onClick={onClickHandler}/>
         </>
       )}
     </>
