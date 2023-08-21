@@ -5,6 +5,13 @@ import logo from "../assets/logo_white_name.png";
 import "./css/Navigation.css";
 
 const Navigation = () => {
+
+  // const [cardgameSelect, setCardgameSelect] = useState(null);
+
+  // const onChangeHandler = (selectedOption) => {
+  //   setUserSelect(selectedOption.value);
+  // };
+
   return (
     <>
       <div className="navigation_container">
@@ -17,6 +24,7 @@ const Navigation = () => {
           </nav>
         </div>
         <div className="nav_selector">
+          {/* <CardgameDropdown cardgameSelect={cardgameSelect} onChangeHandler={onChangeHandler} /> */}
           <CardgameDropdown />
         </div>
         <div className="nav_profile">
