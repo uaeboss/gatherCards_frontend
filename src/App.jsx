@@ -5,8 +5,8 @@ import Home from "./components/Home.jsx";
 import Footer from "./components/Footer";
 import SideNavigation from "./components/SideNavigation";
 
-function App() {
 
+function App() {
   return (
     <>
       <div className="content_container">
@@ -18,7 +18,7 @@ function App() {
         </div>
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home />}/>
+            <Route path="/" element={<Home />} />
             {/* <Route path="magicthegathering" /> */}
             {/* <Route path="yugioh" /> */}
           </Routes>
