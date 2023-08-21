@@ -1,7 +1,15 @@
-const Home = () => {
+import Card from "./Card";
+import "./css/Home.css"
+
+const Home = ({ magic }) => {
+
+
+  console.log(magic)
   return (
     <>
-      <div>Home</div>
+      <div className="cardflow">
+      <Card magic={magic} />
+      </div>
     </>
   );
 };
