@@ -1,14 +1,49 @@
 import Select from "react-select";
+import { useState } from "react";
+import logo from "../assets/magic_logo.png";
+import yugiohlogo from "../assets/yugioh_logo.png";
 
 const CardgameDropdown = () => {
-    const options = [
-        { value: 'magic', label: 'Magic the Gathering' },
-        { value: 'yugioh', label: 'Yu-Gi-Oh' }
-      ]
+  const [cardgameSelect, setCardgameSelect] = useState(null);
+  const [topImage, setTopImage] = useState("");
+
+  
+
+  const onChangeHandler = (selectedOption) => {
+    setCardgameSelect(selectedOption.value);
+    if (selectedOption.value === "magicthegathering") {
+      setTopImage(logo)
+    } else {
+      setTopImage(yugiohlogo)
+    }
+  };
+
+  const onClickHandler = () => {
+    setCardgameSelect(null);
+  }
+
+
+
+  const options = [
+    { value: "magicthegathering", label: "Magic the Gathering" },
+    { value: "yugioh", label: "Yu-Gi-Oh" },
+  ];
 
   return (
     <>
-      <Select className="cardgamedropdown_style" options={options} placeholder="Select your Cardgame ..." />
+    {!cardgameSelect && (
+      <Select
+        className="cardgamedropdown_style"
+        onChange={onChangeHandler}
+        options={options}
+        placeholder="Select your Cardgame ..."
+      />
+      )}
+      {cardgameSelect && (
+        <>
+        <img id="max_width_img" src={topImage} alt="logomagic" onClick={onClickHandler}/>
+        </>
+      )}
     </>
   );
 };

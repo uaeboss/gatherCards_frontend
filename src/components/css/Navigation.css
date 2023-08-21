@@ -11,14 +11,12 @@
 
 .nav_links {
   grid-area: nav_links;
-  border: 2px solid white;
   display: flex;
   justify-content: space-between;
 }
 
 .nav_selector {
   grid-area: nav_selector;
-  border: 2px solid white;
   height: 100%;
   width: 100%;
   display: flex;
@@ -28,7 +26,6 @@
 
 .nav_profile {
   grid-area: nav_profile;
-  border: 2px solid white;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -93,4 +90,9 @@
   width: 150px;
   height: auto;
   padding: 10px 0 10px 15px;
+}
+
+#max_width_img {
+  max-width: 250px;
+  height: auto;
 }
