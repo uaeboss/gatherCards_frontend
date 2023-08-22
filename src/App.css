@@ -15,7 +15,7 @@
     "header header header header"
     "sidenav side_content side_content ."
     "sidenav side_content side_content ."
-    "footer footer footer footer";
+    ". footer footer .";
 }
 
 .start_logo {
@@ -38,5 +38,6 @@
 }
 .footer {
   grid-area: footer;
-  border: 2px solid rgb(21, 114, 126);
+  display: flex;
+  justify-content: center;
 }
