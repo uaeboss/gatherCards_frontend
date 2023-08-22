@@ -1,6 +1,6 @@
 import Select from "react-select";
 import { useState } from "react";
-import logo from "../assets/magic_logo.png";
+import logo from "../assets/magic_logo_2.png";
 import yugiohlogo from "../assets/yugioh_logo.png";
 
 const CardgameDropdown = () => {

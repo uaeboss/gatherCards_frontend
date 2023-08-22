@@ -34,7 +34,7 @@
 }
 .content {
   grid-area: side_content;
-  border: 2px solid red;
+  background-color: #696969;
 }
 .footer {
   grid-area: footer;
