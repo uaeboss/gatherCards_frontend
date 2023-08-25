@@ -5,6 +5,7 @@ form {
     flex-direction: column;
     height: 70%;
     width: 60%;
+    margin: 3rem 0 3rem 0;
 }
 
 input[type=text], input[type=password] {
@@ -26,6 +27,7 @@ input:focus{
 #login_btn {
     width: 60%;
     background-color: #242424;
+    margin-top: 1.5rem;
 }
 
 #login_btn:hover {
