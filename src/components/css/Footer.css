@@ -20,7 +20,10 @@
 
 #links_left a {
     font-size: 1.5rem;
-    color: #fff;
+    color: #86C232;
+}
+#links_left a:hover {
+    color: #61892F;
 }
 
 #links_right {
@@ -34,8 +37,13 @@
 
 #links_right a {
     font-size: 1.5rem;
-    color: #fff;
+    color: #86C232;
   }
+
+  #links_right a:hover {
+    color: #61892F;
+    text-shadow: 0 0 3px #86C232;
+}
 
 #facebook > a > img, #twitter > a > img, #inatagram > a > img {
     max-width: 60px;

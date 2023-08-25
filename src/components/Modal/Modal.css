@@ -29,8 +29,8 @@ body.active-modal {
     background: #181818;
     padding: 14px 28px;
     border-radius: 12px;
-    width: 25vw;
-    height: 45vh;
+    width: 35vw;
+    height: fit-content;
     max-width: 600px;
     min-width: 300px;
 }

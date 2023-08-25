@@ -23,36 +23,36 @@ input:focus{
     outline: none;
 }
 
-#login_btn {
+#registration_btn {
     width: 60%;
     background-color: #242424;
 }
 
-#login_btn:hover {
+#registration_btn:hover {
     width: 65%;
     background-color: #363636;
 }
 
-#form_size_login {
+#form_size_registration {
     height: 80%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
-#signup_size {
+#signin_size {
     height: 20%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
-#singup_link {
+#singin_link {
     color: aqua;
     cursor: pointer;
     
 }
 
-#singup_link:hover {
+#singin_link:hover {
     font-weight: bold;
 }

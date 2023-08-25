@@ -1,9 +1,10 @@
 import "./css/LoginForm.css";
 
-const LoginForm = () => {
+const LoginForm = ({ setLoginActive }) => {
+
     return ( 
         <>
-        <div id="form_size">
+        <div id="form_size_login">
         <form>
             <input type="text" placeholder="Your Name ..."></input>
             <br />
@@ -13,7 +14,7 @@ const LoginForm = () => {
         </form>
         </div>
         <div id="signup_size">
-        Don’t have an account? Sign Up
+        Don’t have an account?&nbsp;<div id="singup_link" onClick={() => {setLoginActive(false)}}>Sign Up</div>
         </div>
 
         </>

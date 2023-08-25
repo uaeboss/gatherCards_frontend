@@ -34,6 +34,7 @@ const CardgameDropdown = () => {
     {!cardgameSelect && (
       <Select
         className="cardgamedropdown_style"
+        backgroundColor=""
         onChange={onChangeHandler}
         options={options}
         placeholder="Select your Cardgame ..."
