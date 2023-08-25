@@ -25,7 +25,7 @@ const Navigation = () => {
         </div>
         <div className="nav_selector">
           {/* <CardgameDropdown cardgameSelect={cardgameSelect} onChangeHandler={onChangeHandler} /> */}
-          <CardgameDropdown />
+          {/* <CardgameDropdown /> */}
         </div>
         <div className="nav_profile">
           <Navigation_Profile />
