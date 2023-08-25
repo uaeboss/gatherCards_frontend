@@ -4,6 +4,8 @@ import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import { useState, useEffect } from "react";
+import { Marketplace } from "./components/Marketplace";
+import { News } from "./components/News";
 
 function App() {
   const [magicUrl, setMagicUrl] = useState(
@@ -40,6 +42,7 @@ function App() {
             
             <Routes>
               <Route path="/" element={<Home magic={magicCards.cards} />} />
+              <Route path="marketplace" element={<Marketplace />} />
               {/* <Route path="magicthegathering" /> */}
               {/* <Route path="yugioh" /> */}
             </Routes>

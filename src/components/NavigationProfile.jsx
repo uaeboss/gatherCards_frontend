@@ -1,5 +1,6 @@
 import cart from "../assets/cart_white.png";
 import Modal from "./Modal/Modal";
+import { Link } from "react-router-dom"
 
 const NavigationProfile = () => {
 
@@ -11,7 +12,7 @@ const NavigationProfile = () => {
           <img id="shopping_cart_image" src={cart} alt="shopping cart" />
         </div>
         <div className="profile_detail">
-          <Modal />
+          <Link to="/login"><Modal /></Link>
         </div>
       </div>
     </>
