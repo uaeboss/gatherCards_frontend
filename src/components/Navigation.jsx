@@ -16,7 +16,7 @@ const Navigation = () => {
     <>
       <div className="navigation_container">
         <div className="nav_links">
-          <img id="start_logo_size" src={logo} alt="logo" />
+          {/* <img id="start_logo_size" src={logo} alt="logo" /> */}
           <nav>
             <NavLink to="/home">Home</NavLink>
             <NavLink to="/news">News</NavLink>

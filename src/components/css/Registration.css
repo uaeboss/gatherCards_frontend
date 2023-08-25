@@ -25,19 +25,22 @@ input:focus{
 
 #registration_btn {
     width: 60%;
-    background-color: #242424;
+    background-color: #61892F;
+    margin-top: 1.5rem;
 }
 
 #registration_btn:hover {
-    width: 65%;
-    background-color: #363636;
+    background-color: #86C232;
 }
 
 #form_size_registration {
-    height: 80%;
+    height: fit-content;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
+    background-color: #222629;
+    border-radius: 1rem;
+    margin-top: 2rem;
 }
 
 #signin_size {
@@ -45,6 +48,8 @@ input:focus{
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-bottom: 1rem;
+    color: #fff;
 }
 
 #singin_link {
@@ -55,4 +60,12 @@ input:focus{
 
 #singin_link:hover {
     font-weight: bold;
+}
+
+#registerform_container {
+ width: 25vw;
+ height: fit-content;
+ background-color: #222629;
+ border-radius: 1rem;
+ margin: 2rem 0 2rem 0;
 }

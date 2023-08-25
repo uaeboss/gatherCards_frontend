@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import { useState, useEffect } from "react";
 import { Marketplace } from "./components/Marketplace";
 import { News } from "./components/News";
+import LoginForm from "./components/LoginForm";
+import Registration from "./components/Registration";
 
 function App() {
   const [magicUrl, setMagicUrl] = useState(
@@ -23,8 +25,6 @@ function App() {
       });
   }, []);
 
-  
-
   if (isLoading) {
     return <p>is Loading!</p>;
   }
@@ -36,13 +36,14 @@ function App() {
           <div className="header">
             <Navigation />
           </div>
-          <div className="sidenavl">{/* <SideNavigation /> */}</div>
-          <div className="sidenavr">{/* <SideNavigation /> */}</div>
-          <div className="content">
-            
+          <div className="sidenavl"></div>
+          <div className="sidenavr"></div>
+          <div className="site_content">
             <Routes>
-              <Route path="/" element={<Home magic={magicCards.cards} />} />
+              <Route path="/home" element={<Home magic={magicCards.cards} />} />
               <Route path="marketplace" element={<Marketplace />} />
+              <Route path="login" element={<LoginForm />} />
+              <Route path="register" element={<Registration />} />
               {/* <Route path="magicthegathering" /> */}
               {/* <Route path="yugioh" /> */}
             </Routes>

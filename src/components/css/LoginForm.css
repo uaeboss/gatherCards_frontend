@@ -26,20 +26,29 @@ input:focus{
 
 #login_btn {
     width: 60%;
-    background-color: #242424;
+    background-color: #61892F;
     margin-top: 1.5rem;
 }
 
 #login_btn:hover {
-    width: 65%;
-    background-color: #363636;
+    background-color: #86C232;
 }
 
-#form_size_login {
+/* #form_size_login {
     height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
+} */
+
+#form_size_login {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222629;
+    border-radius: 1rem;
+    margin: 2rem 0 2rem 0;
 }
 
 #signup_size {
@@ -47,6 +56,8 @@ input:focus{
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-bottom: 1rem;
+    color: #fff;
 }
 
 #singup_link {
@@ -57,4 +68,12 @@ input:focus{
 
 #singup_link:hover {
     font-weight: bold;
+}
+
+#loginform_container {
+ width: 25vw;
+ height: fit-content;
+ background-color: #222629;
+ margin-top: 2rem;
+ border-radius: 1rem;
 }

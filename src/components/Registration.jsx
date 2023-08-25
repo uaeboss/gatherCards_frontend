@@ -1,8 +1,10 @@
 import "./css/Registration.css"
+import { Link } from "react-router-dom"
 
-export const Registration = ({ setLoginActive }) => {
+export const Registration = () => {
     return ( 
         <>
+        <div id="registerform_container">
         <div id="form_size_registration">
         <form>
             <input type="text" placeholder="Username"></input>
@@ -22,9 +24,9 @@ export const Registration = ({ setLoginActive }) => {
         </form>
         </div>
         <div id="signin_size">
-        Already registered?&nbsp;<div id="singin_link" onClick={() => {setLoginActive(true)}}>Log in</div>
+            <p>Already registered? <Link to="/login">Log in</Link></p>
         </div>
-
+        </div>
         </>
      );
 }

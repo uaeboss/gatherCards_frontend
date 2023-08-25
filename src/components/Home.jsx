@@ -1,9 +1,12 @@
 import "./css/Home.css"
+import Card from "./Card";
 // import { useEffect, useState } from "react";
 // import axios from "axios";
 
-const Home = () => {
+const Home = ({ magic }) => {
   
+
+  console.log(magic);
   // const [availableCards, setAvailableCards] = useState([]);
 
   // useEffect(() => {
@@ -21,6 +24,10 @@ const Home = () => {
   return (
     <>
       I am home!
+      <br />
+      <br />
+      <Card />
+      {magic[0].name}
     </>
   );
 };
