@@ -2,6 +2,7 @@ import "./Modal.css";
 import { useState } from "react";
 import LoginForm from "../LoginForm";
 import Registration from "../Registration";
+import { Link } from "react-router-dom"
 
 const Modal = () => {
   const [modal, setModal] = useState(false);
@@ -27,8 +28,8 @@ const Modal = () => {
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
-            {loginActive && <LoginForm setLoginActive={setLoginActive} />}
-            {!loginActive && <Registration setLoginActive={setLoginActive} />}
+            {loginActive && <Link to="/registration"><LoginForm setLoginActive={setLoginActive} /></Link>}
+            {!loginActive && <Link to="/login"><Registration setLoginActive={setLoginActive} /></Link>}
             <button className="close-modal" onClick={toggleModal}>
               CLOSE
             </button>

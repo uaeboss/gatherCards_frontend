@@ -18,15 +18,16 @@
   display: grid;
   width: 100vw;
   background-color: #222629;
-  height: 100vh;
-  grid-template-columns: 0.4fr 1.6fr 1.4fr 0.6fr;
-  grid-template-rows: 0.8fr 1.2fr 1.7fr 0.7fr;
+  height: auto;
+  min-height: 100vh;
+  grid-template-columns: 0.4fr 1.4fr 1.4fr 0.6fr;
+  grid-template-rows: 0.5fr 1.2fr 1.7fr 0.7fr;
   gap: 0px 0px;
   grid-template-areas:
-    ". header header ."
-    "sidenavl side_content side_content sidenavr"
-    "sidenavl side_content side_content sidenavr"
-    ". footer footer .";
+    "header header header header"
+    "sidenavl site_content site_content sidenavr"
+    "sidenavl site_content site_content sidenavr"
+    "footer footer footer footer";
 }
 
 .start_logo {
@@ -39,8 +40,7 @@
 .header {
   grid-area: header;
   background-color: #222629;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  height: 155px;
 }
 .sidenavl {
   grid-area: sidenavl;
@@ -52,10 +52,14 @@
   background-color: #fff;
 }
 
-.content {
-  grid-area: side_content;
+.site_content {
+  grid-area: site_content;
   background-color: #fff;
   color: #222629;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .footer {
   grid-area: footer;
