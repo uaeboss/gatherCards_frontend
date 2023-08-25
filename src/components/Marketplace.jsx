@@ -8,7 +8,7 @@ export const Marketplace = () => {
     useEffect(() => {
       const getAvailableCards = async () => {
         try {
-          const { data } = await axios.get(`http://localhost:8080/cards`);
+          const { data } = await axios.get(`${import.meta.env.VITE_BACKENDURL}/cards`);
           setAvailableCards(data);
         } catch (error) {
           console.log("That didnt work out");

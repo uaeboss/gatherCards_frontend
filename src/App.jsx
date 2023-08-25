@@ -15,10 +15,10 @@ function App() {
   );
   const [magicCards, setMagicCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const [token, setToken] = useState(localStorage.getItem("token"));
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
-  // const [user, setUser] = useState(null);
-  // const [loadingAuthRequest, setLoadingAuthRequest] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loadingAuthRequest, setLoadingAuthRequest] = useState(false);
 
   useEffect(() => {
     fetch(magicUrl)
@@ -29,31 +29,31 @@ function App() {
       });
   }, []);
 
-  // useEffect(() => {
-  //   const validateToken = async () => {
-  //     try {
-  //       setLoadingAuthRequest(true);
-  //       const { data, error } = await getUser(token);
-  //       if (error) throw error;
-  //       setUser(data);
-  //       setIsAuthenticated(true);
-  //       setLoadingAuthRequest(false);
-  //     } catch (error) {
-  //       localStorage.removeItem("token");
-  //       setToken(null);
-  //       setLoadingAuthRequest(false);
-  //       console.log(error.message);
-  //     }
-  //   };
-  //   token && validateToken();
-  // }, [token]);
+  useEffect(() => {
+    const validateToken = async () => {
+      try {
+        setLoadingAuthRequest(true);
+        const { data, error } = await getUser(token);
+        if (error) throw error;
+        setUser(data);
+        setIsAuthenticated(true);
+        setLoadingAuthRequest(false);
+      } catch (error) {
+        localStorage.removeItem("token");
+        setToken(null);
+        setLoadingAuthRequest(false);
+        console.log(error.message);
+      }
+    };
+    token && validateToken();
+  }, [token]);
 
-  // const logOut = () => {
-  //   localStorage.removeItem("token");
-  //   setToken(null);
-  //   setUser(null);
-  //   setIsAuthenticated(false);
-  // };
+  const logOut = () => {
+    localStorage.removeItem("token");
+    setToken(null);
+    setUser(null);
+    setIsAuthenticated(false);
+  };
 
   if (isLoading) {
     return <p>is Loading!</p>;
