@@ -1,7 +1,9 @@
-const ProtectedLayout = () => {
+import { Navigate, Outlet } from "react-router-dom"
+
+const ProtectedLayout = ({ isAuthenticated }) => {
     return (
         <div>
-            {isAuthenticated ? < /> : <Navigate to="/login" />}
+            {isAuthenticated ? <Outlet /> : <Navigate to="/login" />}
         </div>
     )
 }
