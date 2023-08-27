@@ -15,6 +15,7 @@ const NavigationProfile = () => {
           {/* <Link to="/login"><Modal /></Link> */}
           <Link id="login_registration_link" to="/login">Login</Link>
           <Link id="login_registration_link" to="/register">Register</Link>
+          <Link id="login_registration_link" to="/auth/create">Sell Card</Link>
         </div>
       </div>
     </>

@@ -1,6 +1,7 @@
 import "./css/Registration.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { registerUser } from "../utils/authenticationUtils";
 
 export const Registration = () => {
   const [{ username, first_name, last_name, email, password }, setFormState] =

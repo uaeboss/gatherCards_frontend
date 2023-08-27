@@ -8,6 +8,9 @@ import { Marketplace } from "./components/Marketplace";
 import { News } from "./components/News";
 import LoginForm from "./components/LoginForm";
 import Registration from "./components/Registration";
+import CreateCard from "./components/CreateCard";
+import ProtectedLayout from "./components/ProtectedLayout";
+import GlobalLayout from "./components/GlobalLayout";
 
 function App() {
   const [magicUrl, setMagicUrl] = useState(
@@ -70,7 +73,8 @@ function App() {
           <div className="sidenavr"></div>
           <div className="site_content">
             <Routes>
-              <Route path="/home" element={<Home magic={magicCards.cards} />} />
+              <Route path="/" element={<GlobalLayout />} >
+              <Route index element={<Home magic={magicCards.cards} />} />
               <Route path="marketplace" element={<Marketplace />} />
               <Route
                 path="login"
@@ -83,9 +87,11 @@ function App() {
                 }
               />
               <Route path="register" element={<Registration />} />
-              <Route path="secret" element={<postCard />} />
-              {/* <Route path="magicthegathering" /> */}
-              {/* <Route path="yugioh" /> */}
+              <Route path='auth' element={<ProtectedLayout isAuthenticated={isAuthenticated} />}>
+            {/* <Route index element={<UserProfile user={user} />} /> */}
+            <Route path='create' element={<CreateCard />} />
+          </Route>
+              </Route>
             </Routes>
           </div>
           <div className="footer">
