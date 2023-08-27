@@ -1,9 +1,16 @@
 import "./css/Registration.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { registerUser } from "../utils/authenticationUtils";
+import Loading from "./Loading";
 
-export const Registration = () => {
+export const Registration = ({
+  isAuthenticated,
+  setIsAuthenticated,
+  setToken,
+  loadingAuthRequest,
+  setLoadingAuthRequest,
+}) => {
   const [{ username, first_name, last_name, email, password }, setFormState] =
     useState({
       username: "",
@@ -13,32 +20,35 @@ export const Registration = () => {
       password: "",
     });
 
-  const handleRegisterChange = (e) =>
+  const handleChange = (e) =>
     setFormState((prev) => ({ ...prev, [e.target.id]: e.target.value }));
 
-    const handleRegisterSubmit = async e => {
-        try {
-          e.preventDefault();
-          if (!username || !first_name || !last_name || !email || !password)
-            throw new Error('All fields are required!');
-          setLoadingAuthRequest(true);
-          const { data, error } = await registerUser({
-            username,
-            first_name,
-            last_name,
-            email,
-            password
-          });
-          if (error) throw error;
-          setToken(data.token);
-          setIsAuthenticated(true);
-          setLoadingAuthRequest(false);
-          localStorage.setItem('token', data.token);
-        } catch (error) {
-          setLoadingAuthRequest(false);
-          console.log(error.message);
-        }
-      };
+  const handleRegisterSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      if (!username || !first_name || !last_name || !email || !password)
+        throw new Error("All fields are required!");
+      setLoadingAuthRequest(true);
+      const { data, error } = await registerUser({
+        username,
+        first_name,
+        last_name,
+        email,
+        password,
+      });
+      if (error) throw error;
+      setToken(data.token);
+      setIsAuthenticated(true);
+      setLoadingAuthRequest(false);
+      localStorage.setItem("token", data.token);
+    } catch (error) {
+      setLoadingAuthRequest(false);
+      console.log(error.message);
+    }
+  };
+
+  if(loadingAuthRequest) return <Loading />
+  if(isAuthenticated) return <Navigate to="/auth" />
 
   return (
     <>
@@ -46,38 +56,43 @@ export const Registration = () => {
         <div id="form_size_registration">
           <form onSubmit={handleRegisterSubmit}>
             <input
+              id="username"
               type="text"
               placeholder="Username"
               value={username}
-              onChange={handleRegisterChange}
+              onChange={handleChange}
             ></input>
             <br />
             <input
+              id="first_name"
               type="text"
               placeholder="First name"
               value={first_name}
-              onChange={handleRegisterChange}
+              onChange={handleChange}
             ></input>
             <br />
             <input
+            id="last_name"
               type="text"
               placeholder="Last name"
               value={last_name}
-              onChange={handleRegisterChange}
+              onChange={handleChange}
             ></input>
             <br />
             <input
+              id="email"
               type="text"
               placeholder="Email address"
               value={email}
-              onChange={handleRegisterChange}
+              onChange={handleChange}
             ></input>
             <br />
             <input
+              id="password"
               type="password"
               placeholder="Password"
               value={password}
-              onChange={handleRegisterChange}
+              onChange={handleChange}
             ></input>
             <br />
             <br />

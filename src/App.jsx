@@ -11,6 +11,8 @@ import Registration from "./components/Registration";
 import CreateCard from "./components/CreateCard";
 import ProtectedLayout from "./components/ProtectedLayout";
 import GlobalLayout from "./components/GlobalLayout";
+import NotFound from "./components/NotFound";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   const [magicUrl, setMagicUrl] = useState(
@@ -67,31 +69,50 @@ function App() {
       <div className="wrapper">
         <div className="content_container">
           <div className="header">
-            <Navigation />
+            <Navigation isAuthenticated={isAuthenticated} user={user} />
           </div>
           <div className="sidenavl"></div>
           <div className="sidenavr"></div>
           <div className="site_content">
             <Routes>
-              <Route path="/" element={<GlobalLayout />} >
-              <Route index element={<Home magic={magicCards.cards} />} />
-              <Route path="marketplace" element={<Marketplace />} />
-              <Route
-                path="login"
-                element={
-                  <LoginForm
-                    isAuthenticated={isAuthenticated}
-                    setIsAuthenticated={setIsAuthenticated}
-                    setToken={setToken}
-                  />
-                }
-              />
-              <Route path="register" element={<Registration />} />
-              <Route path='auth' element={<ProtectedLayout isAuthenticated={isAuthenticated} />}>
-            {/* <Route index element={<UserProfile user={user} />} /> */}
-            <Route path='create' element={<CreateCard />} />
-          </Route>
+              <Route path="/" element={<GlobalLayout />}>
+                <Route index element={<Home magic={magicCards.cards} />} />
+                <Route path="marketplace" element={<Marketplace />} />
+                <Route
+                  path="login"
+                  element={
+                    <LoginForm
+                      isAuthenticated={isAuthenticated}
+                      setIsAuthenticated={setIsAuthenticated}
+                      setToken={setToken}
+                      loadingAuthRequest={loadingAuthRequest}
+                      setLoadingAuthRequest={setLoadingAuthRequest}
+                    />
+                  }
+                />
+                <Route
+                  path="register"
+                  element={
+                    <Registration
+                      isAuthenticated={isAuthenticated}
+                      setIsAuthenticated={setIsAuthenticated}
+                      setToken={setToken}
+                      loadingAuthRequest={loadingAuthRequest}
+                      setLoadingAuthRequest={setLoadingAuthRequest}
+                    />
+                  }
+                />
+                <Route
+                  path="auth"
+                  element={
+                    <ProtectedLayout isAuthenticated={isAuthenticated} />
+                  }
+                >
+                  <Route index element={<UserProfile user={user} />} />
+                  <Route path="create" element={<CreateCard />} />
+                </Route>
               </Route>
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
           <div className="footer">
