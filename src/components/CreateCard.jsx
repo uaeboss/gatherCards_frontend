@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./css/CreateCard.css"
 
 const CreateCard = () => {
   const [{ title }, setFormState] = useState({
@@ -33,15 +34,22 @@ const CreateCard = () => {
 
   return (
     <>
-      <div>
+      <div id="createcard_container">
+        <div id="form_size_createcard">
+          <h1>Add a card</h1>
         <form onSubmit={handleSubmit}>
           <input
             id="title"
+            type="text"
             placeholder="Title"
             value={title}
             onChange={onChangeHandler}
           ></input>
+          <button id="createcard_btn" type="submit">
+              Sell Card
+            </button>
         </form>
+        </div>
       </div>
     </>
   );

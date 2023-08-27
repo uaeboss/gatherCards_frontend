@@ -19,7 +19,7 @@ export const getUser = async token => {
 
   export const registerUser = async credentials => {
     try {
-      const res = await fetch(`http://localhost:8080/auth/signup`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKENDURL}/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ export const getUser = async token => {
   
   export const loginUser = async credentials => {
     try {
-      const res = await fetch(`http://localhost:8080/auth/signin`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKENDURL}/auth/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -1,21 +1,43 @@
 import cart from "../assets/cart_white.png";
 // import Modal from "./Modal/Modal";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-const NavigationProfile = () => {
-
-
+const NavigationProfile = ({ isAuthenticated, user, logOut }) => {
   return (
     <>
       <div className="profile_container">
-        <div className="shopping_cart">
-          <img id="shopping_cart_image" src={cart} alt="shopping cart" />
-        </div>
         <div className="profile_detail">
-          {/* <Link to="/login"><Modal /></Link> */}
-          <Link id="login_registration_link" to="/login">Login</Link>
-          <Link id="login_registration_link" to="/register">Register</Link>
-          <Link id="login_registration_link" to="/auth/create">Sell Card</Link>
+        <ul>
+          {!isAuthenticated ? (
+            <>
+              <li>
+                <Link id="login_registration_link" to="/login">
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link id="login_registration_link" to="/register">
+                  Register
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+            <li className="shopping_cart">
+            <img id="shopping_cart_image" src={cart} alt="shopping cart" />
+          </li>
+              <li>
+                <Link id="login_registration_link" to="/auth/create">
+                  Sell Card
+                </Link>
+              </li>
+              <li id="logout" onClick={logOut}>
+                <p>Logout</p>
+              </li>
+            </>
+          )}
+          
+        </ul>
         </div>
       </div>
     </>

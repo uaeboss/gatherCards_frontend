@@ -13,6 +13,8 @@ import ProtectedLayout from "./components/ProtectedLayout";
 import GlobalLayout from "./components/GlobalLayout";
 import NotFound from "./components/NotFound";
 import UserProfile from "./components/UserProfile";
+import { getUser } from "./utils/authenticationUtils";
+import Loading from "./components/Loading";
 
 function App() {
   const [magicUrl, setMagicUrl] = useState(
@@ -60,16 +62,14 @@ function App() {
     setIsAuthenticated(false);
   };
 
-  if (isLoading) {
-    return <p>is Loading!</p>;
-  }
+  if(isLoading) return <Loading />
 
   return (
     <>
       <div className="wrapper">
         <div className="content_container">
           <div className="header">
-            <Navigation isAuthenticated={isAuthenticated} user={user} />
+            <Navigation isAuthenticated={isAuthenticated} user={user} logOut={logOut}/>
           </div>
           <div className="sidenavl"></div>
           <div className="sidenavr"></div>

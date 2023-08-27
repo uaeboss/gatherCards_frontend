@@ -1,22 +1,15 @@
 import { NavLink } from "react-router-dom";
-import CardgameDropdown from "./CardgameDropdown";
 import Navigation_Profile from "./NavigationProfile";
-import logo from "../assets/logo_white_name.png";
+import { Link } from "react-router-dom";
 import "./css/Navigation.css";
 
-const Navigation = () => {
+const Navigation = ({ isAuthenticated, user, logOut }) => {
 
-  // const [cardgameSelect, setCardgameSelect] = useState(null);
-
-  // const onChangeHandler = (selectedOption) => {
-  //   setUserSelect(selectedOption.value);
-  // };
 
   return (
     <>
       <div className="navigation_container">
         <div className="nav_links">
-          {/* <img id="start_logo_size" src={logo} alt="logo" /> */}
           <nav>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/news">News</NavLink>
@@ -24,11 +17,14 @@ const Navigation = () => {
           </nav>
         </div>
         <div className="nav_selector">
-          {/* <CardgameDropdown cardgameSelect={cardgameSelect} onChangeHandler={onChangeHandler} /> */}
-          {/* <CardgameDropdown /> */}
+        {user && (
+                  <Link to="/auth">
+                    <h2>Willkommen zurück, {user.username}!</h2>
+                  </Link>
+              )}
         </div>
         <div className="nav_profile">
-          <Navigation_Profile />
+          <Navigation_Profile logOut={logOut} isAuthenticated={isAuthenticated} user={user} />
         </div>
       </div>
     </>
