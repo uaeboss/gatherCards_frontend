@@ -95,9 +95,16 @@
 }
 
 #logout {
-  
   font-size: 1.5rem;
   color: #910f0f;
+  
+  font-weight: 500;
+}
+
+#logout:hover {
+  font-size: 1.5rem;
+  color: #ab3b3b;
+  cursor: pointer;
 }
 
 #shopping_cart_image {
