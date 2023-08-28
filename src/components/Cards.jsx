@@ -1,30 +1,26 @@
-import CardSubject from "./CardSubject";
+import FormatSubject from "./FormatSubject";
 import "./css/Cards.css";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { stateContext } from "../App";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
-  const [setsUrl, setSetsUrl] = useState(
-    "https://api.magicthegathering.io/v1/formats"
-  );
-  const [magicFormats, setMagicFormats] = useState([]);
+  const { magicFormats } = useContext(stateContext);
 
-  useEffect(() => {
-    fetch(setsUrl)
-      .then((res) => res.json())
-      .then((allFormats) => {
-        setMagicFormats(allFormats);
-      });
-  }, []);
-
-  console.log(magicFormats);
+  console.log(magicFormats && magicFormats);
 
   return (
     <>
       <h2 id="margin_h2">Formats:</h2>
       <div className="cards_container">
-         {magicFormats.formats?.map((format) => {
-            return <CardSubject key={format} format={format} />;
-          })}
+        {magicFormats.formats?.map((format) => {
+          return (
+            <Link to={`/formats/${format}`
+            } key={format}>
+              <FormatSubject format={format} />
+            </Link>
+          );
+        })}
       </div>
     </>
   );

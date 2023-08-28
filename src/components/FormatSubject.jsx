@@ -1,6 +1,6 @@
 import "./css/CardSubject.css";
 
-const CardSubject = ({ format }) => {
+const FormatSubject = ({ format }) => {
   return (
     <>
       <div className="cardsubject_container">
@@ -10,4 +10,4 @@ const CardSubject = ({ format }) => {
   );
 };
 
-export default CardSubject;
+export default FormatSubject;
