@@ -1,7 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import {stateContext} from '../App.jsx'
+import { useEffect, useState,useContext } from "react";
 
 export const Marketplace = () => {
+  const { test,user} = useContext(stateContext)
   
     const [availableCards, setAvailableCards] = useState([]);
 
@@ -16,7 +18,6 @@ export const Marketplace = () => {
       };
       getAvailableCards();
     }, []);
-  
     return (
       <>
         {availableCards.map((card) => (<div key={card._id}>I am the title:{card.title} <br/>

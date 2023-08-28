@@ -1,0 +1,84 @@
+form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    width: 60%;
+    margin: 3rem 0 3rem 0;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 5px 0 2px 2px;
+  margin: 0 0;
+  font-size: 1.2rem;
+  display: inline-block;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+input:focus{
+    outline: none;
+}
+
+#createcard_btn {
+    width: 60%;
+    background-color: #61892F;
+    margin-top: 1.5rem;
+}
+
+#createcard_btn_btn:hover {
+    background-color: #86C232;
+}
+
+/* #form_size_login {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+#form_size_createcard {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222629;
+    border-radius: 1rem;
+    margin: 2rem 0 2rem 0;
+}
+
+#form_size_createcard > h1 {
+    color: #fff;
+}
+
+#createcard_size {
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+#createcard_link {
+    color: aqua;
+    cursor: pointer;
+    
+}
+
+#createcard_link:hover {
+    font-weight: bold;
+}
+
+#createcard_container {
+ width: 25vw;
+ height: fit-content;
+ background-color: #222629;
+ margin-top: 2rem;
+ border-radius: 1rem;
+}

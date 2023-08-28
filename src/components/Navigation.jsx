@@ -1,34 +1,34 @@
 import { NavLink } from "react-router-dom";
-import CardgameDropdown from "./CardgameDropdown";
+import {useContext} from 'react'
 import Navigation_Profile from "./NavigationProfile";
-import logo from "../assets/logo_white_name.png";
+import { Link } from "react-router-dom";
 import "./css/Navigation.css";
+import {stateContext} from '../App.jsx'
 
+// const Navigation = ({ isAuthenticated, user, logOut }) => {
 const Navigation = () => {
-
-  // const [cardgameSelect, setCardgameSelect] = useState(null);
-
-  // const onChangeHandler = (selectedOption) => {
-  //   setUserSelect(selectedOption.value);
-  // };
+const { isAuthenticated, user, logOut}=useContext(stateContext)
 
   return (
     <>
       <div className="navigation_container">
         <div className="nav_links">
-          {/* <img id="start_logo_size" src={logo} alt="logo" /> */}
           <nav>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/news">News</NavLink>
+            <NavLink to="/cards">Cards</NavLink>
             <NavLink to="/marketplace">Marketplace</NavLink>
           </nav>
         </div>
         <div className="nav_selector">
-          {/* <CardgameDropdown cardgameSelect={cardgameSelect} onChangeHandler={onChangeHandler} /> */}
-          {/* <CardgameDropdown /> */}
+        {user && (
+                  <Link to="/auth">
+                    <h2>Willkommen zurück, {user.username}!</h2>
+                  </Link>
+              )}
         </div>
         <div className="nav_profile">
-          <Navigation_Profile />
+          <Navigation_Profile logOut={logOut} isAuthenticated={isAuthenticated} user={user} />
         </div>
       </div>
     </>
