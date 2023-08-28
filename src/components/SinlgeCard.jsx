@@ -1,6 +1,4 @@
-import "./css/Card.css"
-
-const SingleCard = ({ magic }) => {
+const SingleCard = () => {
   return (
     <>
     I am the single Card!

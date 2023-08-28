@@ -16,6 +16,7 @@ import UserProfile from "./components/UserProfile";
 import { getUser } from "./utils/authenticationUtils";
 import Loading from "./components/Loading";
 import Cards from "./components/Cards";
+import Formats from "./components/Formats";
 export const stateContext = createContext();
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [loadingAuthRequest, setLoadingAuthRequest] = useState(false);
+  const [magicFormats, setMagicFormats] = useState([]);
+  const formatUrl = "https://api.magicthegathering.io/v1/formats";
   const magicUrl =
     "https://api.magicthegathering.io/v1/cards?format=legacy&page=2";
 
@@ -34,6 +37,14 @@ function App() {
       .then((allCards) => {
         setMagicCards(allCards);
         setIsLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch(formatUrl)
+      .then((res) => res.json())
+      .then((allFormats) => {
+        setMagicFormats(allFormats);
       });
   }, []);
 
@@ -68,8 +79,6 @@ function App() {
   return (
     <stateContext.Provider
       value={{
-        magicCards,
-        setMagicCards,
         isLoading,
         setIsLoading,
         token,
@@ -81,6 +90,7 @@ function App() {
         loadingAuthRequest,
         setLoadingAuthRequest,
         logOut,
+        magicFormats,
       }}
     >
       <div className="wrapper">
@@ -95,6 +105,7 @@ function App() {
               <Route path="/" element={<GlobalLayout />}>
                 <Route index element={<Home />} />
                 <Route path="cards" element={<Cards />} />
+                <Route path="formats/:params" element={<Formats />} />
                 <Route path="news" element={<News />} />
                 <Route path="marketplace" element={<Marketplace />} />
                 <Route path="login" element={<LoginForm />} />

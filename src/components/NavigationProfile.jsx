@@ -1,8 +1,13 @@
 import cart from "../assets/cart_white.png";
 // import Modal from "./Modal/Modal";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { stateContext } from "../App";
 
-const NavigationProfile = ({ isAuthenticated, user, logOut }) => {
+const NavigationProfile = () => {
+
+  const { isAuthenticated, logOut } = useContext(stateContext)
+
   return (
     <>
       <div className="profile_container">

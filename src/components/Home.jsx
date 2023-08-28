@@ -1,8 +1,6 @@
 import "./css/Home.css"
-import Card from "./CardSubject.jsx";
-import Loading from "./Loading";
 
-const Home = ({ magic }) => {
+const Home = () => {
 
   return (
     <>
