@@ -1,6 +1,6 @@
 import "./css/Card.css"
 
-const Card = ({ magic }) => {
+const SingleCard = ({ magic }) => {
   return (
     <>
     I am the single Card!
@@ -8,4 +8,4 @@ const Card = ({ magic }) => {
   );
 };
 
-export default Card;
+export default SingleCard;

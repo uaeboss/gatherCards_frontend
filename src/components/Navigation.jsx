@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
+import {useContext} from 'react'
 import Navigation_Profile from "./NavigationProfile";
 import { Link } from "react-router-dom";
 import "./css/Navigation.css";
+import {stateContext} from '../App.jsx'
 
-const Navigation = ({ isAuthenticated, user, logOut }) => {
-
+// const Navigation = ({ isAuthenticated, user, logOut }) => {
+const Navigation = () => {
+const { isAuthenticated, user, logOut}=useContext(stateContext)
 
   return (
     <>
@@ -13,6 +16,7 @@ const Navigation = ({ isAuthenticated, user, logOut }) => {
           <nav>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/news">News</NavLink>
+            <NavLink to="/cards">Cards</NavLink>
             <NavLink to="/marketplace">Marketplace</NavLink>
           </nav>
         </div>

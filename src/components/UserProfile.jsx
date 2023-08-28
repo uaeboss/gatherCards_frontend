@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
+import { useContext } from "react";
+import { stateContext } from "../App";
 
 
-const UserProfile = ({ user }) => {
+const UserProfile = () => {
+
+    const {user} = useContext(stateContext)
+
     return user? (
         <div>
             <h1>Welcome back, {user.username} - du Nase</h1>

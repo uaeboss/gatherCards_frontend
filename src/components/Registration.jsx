@@ -1,16 +1,19 @@
 import "./css/Registration.css";
 import { Link, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { stateContext } from "../App";
 import { registerUser } from "../utils/authenticationUtils";
 import Loading from "./Loading";
 
-export const Registration = ({
-  isAuthenticated,
-  setIsAuthenticated,
-  setToken,
-  loadingAuthRequest,
-  setLoadingAuthRequest,
-}) => {
+export const Registration = () => {
+  const {
+    isAuthenticated,
+    setIsAuthenticated,
+    setToken,
+    loadingAuthRequest,
+    setLoadingAuthRequest,
+  } = useContext(stateContext);
+
   const [{ username, first_name, last_name, email, password }, setFormState] =
     useState({
       username: "",
@@ -47,8 +50,8 @@ export const Registration = ({
     }
   };
 
-  if(loadingAuthRequest) return <Loading />
-  if(isAuthenticated) return <Navigate to="/auth" />
+  if (loadingAuthRequest) return <Loading />;
+  if (isAuthenticated) return <Navigate to="/auth" />;
 
   return (
     <>
@@ -72,7 +75,7 @@ export const Registration = ({
             ></input>
             <br />
             <input
-            id="last_name"
+              id="last_name"
               type="text"
               placeholder="Last name"
               value={last_name}

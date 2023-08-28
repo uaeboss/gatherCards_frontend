@@ -1,16 +1,13 @@
 import "./css/LoginForm.css";
 import { Link, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { stateContext } from "../App";
 import Loading from "./Loading";
 import { loginUser } from "../utils/authenticationUtils";
 
-const LoginForm = ({
-  isAuthenticated,
-  setToken,
-  setIsAuthenticated,
-  loadingAuthRequest,
-  setLoadingAuthRequest,
-}) => {
+const LoginForm = () => {
+  const { isAuthenticated, setToken, setIsAuthenticated, loadingAuthRequest, setLoadingAuthRequest } = useContext(stateContext)
+
   const [{ email, password }, setFormState] = useState({
     email: "",
     password: "",
