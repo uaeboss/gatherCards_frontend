@@ -20,7 +20,7 @@
   background-color: #222629;
   height: auto;
   min-height: 100vh;
-  grid-template-columns: 0.4fr 1.4fr 1.4fr 0.6fr;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
   grid-template-rows: 155px 1.2fr 1.7fr 200px;
   gap: 0px 0px;
   grid-template-areas:

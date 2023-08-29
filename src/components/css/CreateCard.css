@@ -1,14 +1,15 @@
-form {
+#form_size_createcard > form {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: column;
-    height: 70%;
-    width: 60%;
-    margin: 3rem 0 3rem 0;
+    flex-direction: row;
+    justify-content: center;
+    width: 500px;
 }
 
-input[type=text] {
+#form_size_createcard > form > input {
+    width: 300px;
+}
+
+input[type=text], input[type=number], input[type=search] {
   width: 100%;
   padding: 5px 0 2px 2px;
   margin: 0 0;
@@ -34,26 +35,15 @@ input:focus{
     background-color: #86C232;
 }
 
-/* #form_size_login {
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
 #form_size_createcard {
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 100px;
+    width: 550px;
     background-color: #222629;
     border-radius: 1rem;
     margin: 2rem 0 2rem 0;
-}
-
-#form_size_createcard > h1 {
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #createcard_size {
@@ -76,9 +66,26 @@ input:focus{
 }
 
 #createcard_container {
- width: 25vw;
  height: fit-content;
- background-color: #222629;
  margin-top: 2rem;
  border-radius: 1rem;
+ display: flex;
+ justify-content: center;
+ width: 80vw;
+}
+
+h2 {
+    color: #fff;
+    margin-top: 20px;
+}
+
+#search_btn {
+    height: 35px;
+    margin-left: 15px;
+}
+
+#search_results {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
