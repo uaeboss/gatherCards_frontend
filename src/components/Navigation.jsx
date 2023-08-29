@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./css/Navigation.css";
 import {stateContext} from '../App.jsx'
 
-// const Navigation = ({ isAuthenticated, user, logOut }) => {
 const Navigation = () => {
 const { isAuthenticated, user, logOut}=useContext(stateContext)
 
@@ -16,7 +15,7 @@ const { isAuthenticated, user, logOut}=useContext(stateContext)
           <nav>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/news">News</NavLink>
-            <NavLink to="/cards">Cards</NavLink>
+            <NavLink to="/magic">Magic</NavLink>
             <NavLink to="/marketplace">Marketplace</NavLink>
           </nav>
         </div>

@@ -1,6 +1,6 @@
 import "./css/CardSubject.css";
 
-const FormatSubject = ({ format }) => {
+const MagicColors = ({ format }) => {
   return (
     <>
       <div className="cardsubject_container">
@@ -10,4 +10,4 @@ const FormatSubject = ({ format }) => {
   );
 };
 
-export default FormatSubject;
+export default MagicColors;

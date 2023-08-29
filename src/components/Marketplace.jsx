@@ -1,9 +1,8 @@
 import axios from "axios";
 import {stateContext} from '../App.jsx'
-import { useEffect, useState,useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 
 export const Marketplace = () => {
-  const { test,user} = useContext(stateContext)
   
     const [availableCards, setAvailableCards] = useState([]);
 

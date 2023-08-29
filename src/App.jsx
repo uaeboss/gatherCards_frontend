@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
@@ -15,36 +15,28 @@ import NotFound from "./components/NotFound";
 import UserProfile from "./components/UserProfile";
 import { getUser } from "./utils/authenticationUtils";
 import Loading from "./components/Loading";
-import Cards from "./components/Cards";
-import Formats from "./components/Formats";
+import Magic from "./components/Magic";
+import Sets from "./components/Sets";
 export const stateContext = createContext();
 
 function App() {
-  const [magicCards, setMagicCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [loadingAuthRequest, setLoadingAuthRequest] = useState(false);
   const [magicFormats, setMagicFormats] = useState([]);
-  const formatUrl = "https://api.magicthegathering.io/v1/formats";
-  const magicUrl =
-    "https://api.magicthegathering.io/v1/cards?format=legacy&page=2";
 
-  useEffect(() => {
-    fetch(magicUrl)
-      .then((res) => res.json())
-      .then((allCards) => {
-        setMagicCards(allCards);
-        setIsLoading(false);
-      });
-  }, []);
+  const formatUrl = "https://api.scryfall.com/cards/search?include_extras=true&include_variations=true&order=set&q=e%3Awoe&unique=prints";
+
+  let { params } = useParams();
 
   useEffect(() => {
     fetch(formatUrl)
       .then((res) => res.json())
-      .then((allFormats) => {
-        setMagicFormats(allFormats);
+      .then((allCards) => {
+        setMagicFormats(allCards);
+        setIsLoading(false)
       });
   }, []);
 
@@ -90,7 +82,7 @@ function App() {
         loadingAuthRequest,
         setLoadingAuthRequest,
         logOut,
-        magicFormats,
+        magicFormats
       }}
     >
       <div className="wrapper">
@@ -104,8 +96,8 @@ function App() {
             <Routes>
               <Route path="/" element={<GlobalLayout />}>
                 <Route index element={<Home />} />
-                <Route path="cards" element={<Cards />} />
-                <Route path="formats/:params" element={<Formats />} />
+                <Route path="magic" element={<Magic />} />
+                <Route path="magic/:params" element={<Sets params={params} />} />
                 <Route path="news" element={<News />} />
                 <Route path="marketplace" element={<Marketplace />} />
                 <Route path="login" element={<LoginForm />} />

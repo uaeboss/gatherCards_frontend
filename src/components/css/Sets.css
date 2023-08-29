@@ -1,0 +1,14 @@
+#set_display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 25px 0 25px 0;
+}
+
+#display_singlecard {
+    margin: 0 10px 10px 10px;
+}
+
+#border_radius {
+    border-radius: 15px;
+}

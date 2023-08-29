@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .wrapper {
@@ -20,7 +21,7 @@
   height: auto;
   min-height: 100vh;
   grid-template-columns: 0.4fr 1.4fr 1.4fr 0.6fr;
-  grid-template-rows: 155px 1.2fr 1.7fr 0.7fr;
+  grid-template-rows: 155px 1.2fr 1.7fr 200px;
   gap: 0px 0px;
   grid-template-areas:
     "header header header header"
@@ -66,6 +67,7 @@
 .footer {
   grid-area: footer;
   display: flex;
+  height: 200px;
   justify-content: space-evenly;
   background-color: #222629;
   border-top-left-radius: 10px;

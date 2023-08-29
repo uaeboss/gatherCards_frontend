@@ -1,0 +1,43 @@
+.magic_container {
+    width: 65vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#margin_h2 {
+    margin-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#woe {
+    margin: 30px 0 30px 0;
+    max-height: 393px;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 10px #000;
+}
+#lotr {
+    margin: 0 0 30px 0;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 10px #000;
+    max-height: 393px;
+}
+#mom {
+    margin: 0 0 0 0;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 10px #000;
+    max-height: 393px;
+}
+
+#woe:hover {
+    transform: scale(1.1);
+}
+#lotr:hover {
+    transform: scale(1.1);
+}
+#mom:hover {
+    transform: scale(1.1);
+}
