@@ -8,7 +8,7 @@ import { Marketplace } from "./components/Marketplace";
 import { News } from "./components/News";
 import LoginForm from "./components/LoginForm";
 import Registration from "./components/Registration";
-import CreateCard from "./components/CreateCard";
+// import CreateCard from "./components/CreateCard";
 import ProtectedLayout from "./components/ProtectedLayout";
 import GlobalLayout from "./components/GlobalLayout";
 import NotFound from "./components/NotFound";
@@ -17,7 +17,11 @@ import { getUser } from "./utils/authenticationUtils";
 import Loading from "./components/Loading";
 import Magic from "./components/Magic";
 import Sets from "./components/Sets";
+import SellCard from "./components/SellCard";
+
+// next line is to be deleted but the one fter it souldu be spread across all other files that are using stateContext
 export const stateContext = createContext();
+// import {stateContext} from './context/stateContext.jsx'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,17 +30,20 @@ function App() {
   const [user, setUser] = useState(null);
   const [loadingAuthRequest, setLoadingAuthRequest] = useState(false);
   const [magicFormats, setMagicFormats] = useState([]);
+  
 
-  const formatUrl = "https://api.scryfall.com/cards/search?include_extras=true&include_variations=true&order=set&q=e%3Awoe&unique=prints";
+  const formatUrl =
+    "https://api.scryfall.com/cards/search?include_extras=true&include_variations=true&order=set&q=e%3Awoe&unique=prints";
 
   let { params } = useParams();
+  let { search } = useParams();
 
   useEffect(() => {
     fetch(formatUrl)
       .then((res) => res.json())
       .then((allCards) => {
         setMagicFormats(allCards);
-        setIsLoading(false)
+        setIsLoading(false);
       });
   }, []);
 
@@ -82,7 +89,7 @@ function App() {
         loadingAuthRequest,
         setLoadingAuthRequest,
         logOut,
-        magicFormats
+        magicFormats,
       }}
     >
       <div className="wrapper">
@@ -97,14 +104,18 @@ function App() {
               <Route path="/" element={<GlobalLayout />}>
                 <Route index element={<Home />} />
                 <Route path="magic" element={<Magic />} />
-                <Route path="magic/:params" element={<Sets params={params} />} />
+                <Route
+                  path="magic/:params"
+                  element={<Sets params={params} />}
+                />
+
                 <Route path="news" element={<News />} />
                 <Route path="marketplace" element={<Marketplace />} />
                 <Route path="login" element={<LoginForm />} />
                 <Route path="register" element={<Registration />} />
                 <Route path="auth" element={<ProtectedLayout />}>
                   <Route index element={<UserProfile />} />
-                  <Route path="create" element={<CreateCard />} />
+                  <Route path="create" element={<SellCard search={search} />} />
                 </Route>
               </Route>
               <Route path="*" element={<NotFound />} />

@@ -4,16 +4,22 @@ import { useNavigate } from "react-router-dom";
 import "./css/CreateCard.css"
 
 const CreateCard = () => {
-  const [{ title }, setFormState] = useState({
+  const [{ title,image,qty,price,available }, setFormState] = useState({
     title: "",
+    image:"",
+    qty:0,
+    price:0,
+    available:true
   });
 
   const navigate = useNavigate();
 
   const onChangeHandler = (e) =>
-    setFormState((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+    setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const isAvailable = (e) =>
+    setFormState((prev) => ({ ...prev, available:  e.target.name==="notavailable"?false:true }));
 
-  const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       if (!title) return alert("Please fill out every field!");
@@ -40,11 +46,19 @@ const CreateCard = () => {
         <form onSubmit={handleSubmit}>
           <input
             id="title"
+            name="title"
             type="text"
             placeholder="Title"
             value={title}
             onChange={onChangeHandler}
-          ></input>
+          />
+          <input type="text" name="image" placeholder="Image-url" id="image" onChange={onChangeHandler} />
+          <input type="number" min={0} name="qty"id="qty" onChange={onChangeHandler}/>
+          <input type="number" name="price" id="price"  onChange={onChangeHandler}/>
+          <input type="radio" id="available" name="available" value="available"  onChange={isAvailable}/>
+          <label htmlFor="available">available</label>
+          <input type="radio" id="notavailable" name="notavailable" value="notavailable"  onChange={isAvailable}/>
+          <label htmlFor="notavailable">notavailable</label>
           <button id="createcard_btn" type="submit">
               Sell Card
             </button>
