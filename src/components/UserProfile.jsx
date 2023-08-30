@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
 import { useContext } from "react";
-import { stateContext } from "../App";
+import { stateContext } from "../context/stateContext.jsx";
 
 
 const UserProfile = () => {

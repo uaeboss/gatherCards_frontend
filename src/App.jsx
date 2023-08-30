@@ -18,9 +18,10 @@ import Loading from "./components/Loading";
 import Magic from "./components/Magic";
 import Sets from "./components/Sets";
 import SellCard from "./components/SellCard";
+import { stateContext } from "./context/stateContext.jsx";
 
 // next line is to be deleted but the one fter it souldu be spread across all other files that are using stateContext
-export const stateContext = createContext();
+// export const stateContext = createContext();
 // import {stateContext} from './context/stateContext.jsx'
 
 function App() {
@@ -30,7 +31,6 @@ function App() {
   const [user, setUser] = useState(null);
   const [loadingAuthRequest, setLoadingAuthRequest] = useState(false);
   const [magicFormats, setMagicFormats] = useState([]);
-  
 
   const formatUrl =
     "https://api.scryfall.com/cards/search?include_extras=true&include_variations=true&order=set&q=e%3Awoe&unique=prints";

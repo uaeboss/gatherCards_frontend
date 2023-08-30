@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom"
 import { useContext } from "react"
-import { stateContext } from "../App"
+import { stateContext } from "../context/stateContext.jsx";
 
 const ProtectedLayout = () => {
     const { isAuthenticated } = useContext(stateContext)
