@@ -17,6 +17,8 @@
     transition: all .2s ease-in-out;
     box-shadow: 0 0 10px #000;
     max-height: 393px;
+    margin: 0;
+    padding: 0;
 }
 #lotr {
     transition: all .2s ease-in-out;
@@ -49,4 +51,9 @@
 #one:hover {
     transform: scale(1.1);
     box-shadow: 0 0 50px #000;
+}
+
+#pad_mar {
+    margin: 0;
+    padding: 0;
 }

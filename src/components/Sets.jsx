@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./css/Sets.css";
-import SingleCard from "./SingleCard.jsx";
+// import SingleCard from "./SingleCard.jsx";
 import Pagination from "./Pagination";
 
 const Sets = () => {
   const [sets, setSets] = useState();
-  const [post, setPost] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(10);
   let { params } = useParams();
-
-  // console.log("test:", formatCards && formatCards);
 
   useEffect(() => {
     fetch(
