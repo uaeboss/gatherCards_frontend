@@ -6,23 +6,9 @@ import Pagination from "./Pagination";
 
 const SellCard = ({ search }) => {
   const [searchCard, setSearchCard] = useState("");
-  const [submitCard, setSubmitCard] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(8);
-
-  // const navigate = useNavigate();
-
-  useEffect(() => {
-    axios
-      .get(
-        `https://api.scryfall.com/cards/search?q=${submitCard}&order=name+-is%3Adoublesided+is%3Aimage_uris`
-      )
-      .then((response) => {
-        setSearchResult(response.data);
-      });
-  }, [submitCard]);
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
@@ -39,7 +25,13 @@ const SellCard = ({ search }) => {
     if (!searchCard) {
       alert("alert");
     } else {
-      setSubmitCard(searchCard);
+      axios
+      .get(
+        `https://api.scryfall.com/cards/search?q=${searchCard}&order=name+-is%3Adoublesided+is%3Aimage_uris`
+      )
+      .then((response) => {
+        setSearchResult(response.data);
+      });
     }
   };
 
@@ -66,7 +58,6 @@ const SellCard = ({ search }) => {
           currentPosts.map((card) => {
               return (
                 <div id="display_singlecard" key={card.id}>
-                  <p>p-tag</p>
                   <img
                     id="border_radius"
                     src={
