@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom"
 // import { useNavigate } from "react-router-dom";
 import "./css/CreateCard.css";
 import Pagination from "./Pagination";
@@ -8,7 +9,7 @@ const SellCard = ({ search }) => {
   const [searchCard, setSearchCard] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(8);
+  const [postPerPage, setPostPerPage] = useState(10);
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
@@ -27,7 +28,7 @@ const SellCard = ({ search }) => {
     } else {
       axios
       .get(
-        `https://api.scryfall.com/cards/search?q=${searchCard}&order=name+-is%3Adoublesided+is%3Aimage_uris`
+        `https://api.scryfall.com/cards/search?q=${searchCard}`
       )
       .then((response) => {
         setSearchResult(response.data);
@@ -57,7 +58,8 @@ const SellCard = ({ search }) => {
         {currentPosts &&
           currentPosts.map((card) => {
               return (
-                <div id="display_singlecard" key={card.id}>
+                <Link to={`/auth/create/${card.id}`} id={card.id} key={card.id}>
+                <div id="display_singlecard" >                  
                   <img
                     id="border_radius"
                     src={
@@ -77,7 +79,10 @@ const SellCard = ({ search }) => {
                     }
                     width="300px"
                   />
+                  
                 </div>
+                </Link>
+                
               );
             })}
         <div>

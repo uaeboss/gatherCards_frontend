@@ -1,11 +1,16 @@
 #singlecard_container {
     width: 50vw;
-    height: 100%;
+    height: 75vh;
     display: flex;
+    margin-top: 35px;
 }
 
 #singlecard_left {
     width: 50%;
+}
+
+#singlecard_btn {
+    margin: 50px 0 0 0;
 }
 
 #singlecard_right {
@@ -21,7 +26,7 @@
 #singlecard_right p {
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 #italic {
@@ -32,6 +37,64 @@
     border-radius: 15px;
 }
 
-#singlecard_btn {
-    width: 250px;
+#sellcard_btn {
+    width: 100px;
+    height: 50px;
+    font-size: 0.8rem;
+    margin-left: 30px;
 }
+
+#sellcard_form {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+input[type=text], input[type=number], input[type=search] {
+    padding: 5px 0 2px 2px;
+    font-size: 1.2rem;
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 5px;
+    background-color: transparent;
+    box-sizing: border-box;
+    color: #000;
+  }
+
+  .input-icon {
+    position: relative;
+  }
+  
+  .input-icon > i {
+    position: absolute;
+    display: block;
+    transform: translate(0, -50%);
+    top: 50%;
+    pointer-events: none;
+    width: 50px;
+    text-align: center;
+    font-style: normal;
+  }
+  
+  .input-icon > input {
+    padding-left: 25px;
+    padding-right: 0;
+  }
+  
+  .input-icon-right > i {
+    right: 0;
+  }
+  
+  .input-icon-right > input {
+    padding-left: 0;
+    padding-right: 25px;
+  }
+
+  #singlesell_submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+  }
