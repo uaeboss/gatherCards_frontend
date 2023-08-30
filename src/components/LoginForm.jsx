@@ -1,7 +1,7 @@
 import "./css/LoginForm.css";
 import { Link, Navigate } from "react-router-dom";
 import { useState, useContext } from "react";
-import { stateContext } from "../App";
+import { stateContext } from "../context/stateContext.jsx";
 import Loading from "./Loading";
 import { loginUser } from "../utils/authenticationUtils";
 

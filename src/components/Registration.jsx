@@ -1,7 +1,7 @@
 import "./css/Registration.css";
 import { Link, Navigate } from "react-router-dom";
 import { useState, useContext } from "react";
-import { stateContext } from "../App";
+import { stateContext } from "../context/stateContext.jsx";
 import { registerUser } from "../utils/authenticationUtils";
 import Loading from "./Loading";
 

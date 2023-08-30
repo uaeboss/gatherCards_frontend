@@ -3,7 +3,7 @@ import {useContext} from 'react'
 import Navigation_Profile from "./NavigationProfile";
 import { Link } from "react-router-dom";
 import "./css/Navigation.css";
-import {stateContext} from '../App.jsx'
+import { stateContext } from "../context/stateContext.jsx";
 
 const Navigation = () => {
 const { isAuthenticated, user, logOut}=useContext(stateContext)
