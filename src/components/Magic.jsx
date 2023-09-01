@@ -11,16 +11,16 @@ const Magic = () => {
       <div className="magic_container">
         
         <Link id="woe" to="/magic/woe">
-            <img src={woe} width="700px" />
+            <img src={woe} width="500px" />
         </Link>
         <Link id="lotr" to="/magic/ltr">
-            <img src={lotr} width="700px" />
+            <img src={lotr} width="500px" />
         </Link>
         <Link id="mom" to="/magic/mom">
-            <img src={mom} width="700px" />
+            <img src={mom} width="500px" />
         </Link>
         <Link id="one" to="/magic/one">
-            <img src={one} width="700px" />
+            <img src={one} width="500px" />
         </Link>
       </div>
     </>
