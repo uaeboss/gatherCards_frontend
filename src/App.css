@@ -6,7 +6,7 @@
 }
 
 .wrapper {
-  background-color: #fff;
+  background-color: #ffffff;
   width: 100vw;
   height: auto;
   display: flex;
@@ -58,7 +58,7 @@
 .site_content {
   grid-area: site_content;
   background-color: #fff;
-  color: #222629;
+  color: #000;
   padding-bottom: 2rem;
   display: flex;
   justify-content: center;

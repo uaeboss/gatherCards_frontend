@@ -14,7 +14,7 @@ const { isAuthenticated, user, logOut}=useContext(stateContext)
         <div className="nav_links">
           <nav>
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/news">News</NavLink>
+            {/* <NavLink to="/news">News</NavLink> */}
             <NavLink to="/magic">Magic</NavLink>
             <NavLink to="/marketplace">Marketplace</NavLink>
           </nav>

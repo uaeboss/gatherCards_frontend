@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export const SingleCard = () => {
+  const [showadded, setshowadded] = useState(false)
   const [{ id, name, qty, price, image }, setFormState] = useState({
     id: "",
     name: "",
@@ -43,7 +44,11 @@ export const SingleCard = () => {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
-      navigate(`/posts/${data._id}`, { replace: true });
+      setshowadded(true)
+      // navigate(`/posts/${data._id}`, { replace: true });
+      setTimeout(() => {
+        navigate(`/marketplace`, { replace: true });
+      }, 2000);
     } catch (error) {
       console.log(error);
     }
@@ -61,9 +66,15 @@ export const SingleCard = () => {
   // console.log("aktuelle Karte:", id,image_uris,name);
   console.log("aktuelle Karte:", currentCard);
 
+
+
   return (
     <>
-      <div id="singlecard_container">
+      { showadded ? (
+        <h2 id="res_success">Card added successfully!</h2>
+      ) : (
+        <>
+        <div id="singlecard_container">
         <div id="singlecard_left">
           <img
             id="img_radius"
@@ -131,6 +142,8 @@ export const SingleCard = () => {
           <button id="singlecard_btn">Zurück</button>
         </div>
       </div>
+        </>
+      )}
     </>
-  );
+  )
 };

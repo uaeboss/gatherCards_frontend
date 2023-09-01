@@ -26,7 +26,8 @@
 #singlecard_right p {
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #61892F;
+    ;
 }
 
 #italic {
@@ -34,7 +35,8 @@
 }
 
 #img_radius {
-    border-radius: 15px;
+    border-radius: 19px;
+    box-shadow: 0 0 20px #fff;
 }
 
 #sellcard_btn {
@@ -97,4 +99,9 @@ input[type=text], input[type=number], input[type=search] {
     justify-content: center;
     align-items: flex-end;
     width: 100%;
+  }
+
+  #res_success {
+    color: #61892F;
+    font-size: 2rem;
   }

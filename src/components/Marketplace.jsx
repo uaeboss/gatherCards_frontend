@@ -11,23 +11,16 @@ export const Marketplace = () => {
   useEffect(() => {
     const getAvailableCards = async () => {
       try {
-        //     fetch(formatUrl)
-        // .then((res) => res.json())
-        // .then((allCards) => {
-
-        // });
         const { data } = await axios.get(
           `${import.meta.env.VITE_BACKENDURL}/cards`
         );
         setAvailableCards(data);
       } catch (error) {
-        console.log("That didnt work out");
+        console.log(error);
       }
     };
     getAvailableCards();
   }, []);
-
-  console.log(availableCards);
 
   return (
     <>
@@ -35,7 +28,7 @@ export const Marketplace = () => {
         {availableCards?.map((card) => (
           <div key={card._id}>
             <MarketplaceCards
-              id={card.id}
+              cardId={card.id}
               name={card.name}
               image={card.image}
               qty={card.qty}

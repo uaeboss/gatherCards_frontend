@@ -3,12 +3,12 @@ import { Route, Routes, useParams } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect } from "react";
 import { Marketplace } from "./components/Marketplace";
-import { News } from "./components/News";
+// import { News } from "./components/News";
 import LoginForm from "./components/LoginForm";
+import Shoppingcart from "./components/Shoppingcart";
 import Registration from "./components/Registration";
-// import CreateCard from "./components/CreateCard";
 import ProtectedLayout from "./components/ProtectedLayout";
 import GlobalLayout from "./components/GlobalLayout";
 import NotFound from "./components/NotFound";
@@ -21,17 +21,15 @@ import SellCard from "./components/SellCard";
 import { stateContext } from "./context/stateContext.jsx";
 import { SingleCard } from "./components/SingleCard";
 
-// next line is to be deleted but the one fter it souldu be spread across all other files that are using stateContext
-// export const stateContext = createContext();
-// import {stateContext} from './context/stateContext.jsx'
-
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [loadingAuthRequest, setLoadingAuthRequest] = useState(false);
   const [magicFormats, setMagicFormats] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [cartItemsCount, setCartItemsCount] = useState(0);
 
   const formatUrl =
     "https://api.scryfall.com/cards/search?include_extras=true&include_variations=true&order=set&q=e%3Awoe&unique=prints";
@@ -90,6 +88,10 @@ function App() {
         setLoadingAuthRequest,
         logOut,
         magicFormats,
+        cart,
+        setCart,
+        cartItemsCount,
+        setCartItemsCount
       }}
     >
       <div className="wrapper">
@@ -109,12 +111,13 @@ function App() {
                   element={<Sets params={params} />}
                 />
 
-                <Route path="news" element={<News />} />
+                {/* <Route path="news" element={<News />} /> */}
                 <Route path="marketplace" element={<Marketplace />} />
                 <Route path="login" element={<LoginForm />} />
                 <Route path="register" element={<Registration />} />
                 <Route path="auth" element={<ProtectedLayout />}>
                   <Route index element={<UserProfile />} />
+                  <Route path="shoppingcart" element={<Shoppingcart />}/>
                   <Route path="create" element={<SellCard />} />
                   <Route path="create/:cardid" element={<SingleCard />} />
                 </Route>
