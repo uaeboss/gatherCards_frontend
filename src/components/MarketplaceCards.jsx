@@ -15,15 +15,11 @@ export const MarketplaceCards = ({
   const { cart, setCart } = useContext(stateContext);
 
   const handleclick = () => {
-    let existingCard = cart.find((e) => e?.cardId);
+    let existingCard = cart.find((e) => e?.cardId === cardId);
     if (existingCard !== undefined) {
-      let newCart = cart.map((e) => {
-        if (existingCard.cardId === e.cardId) {
-          e.amount = e.amount + 1;
-        } else {
-          return e;
-        }
-      });
+      let newCart = cart.map((e) =>
+        existingCard.cardId === e.cardId ? { ...e, amount: (e.amount += 1) } : e
+      );
       console.log(newCart);
       setCart(newCart);
     } else {
