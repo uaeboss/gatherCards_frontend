@@ -42,6 +42,7 @@ const SellCard = ({ search }) => {
         <div id="form_size_createcard">
           <form onSubmit={handleSearchSubmit}>
             <input
+              id="search_input"
               type="search"
               name="search"
               placeholder="Name"

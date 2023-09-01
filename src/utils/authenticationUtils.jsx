@@ -1,6 +1,6 @@
 export const getUser = async token => {
     try {
-      const res = await fetch(`http://localhost:8080/auth/me`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKENDURL}/auth/me`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`

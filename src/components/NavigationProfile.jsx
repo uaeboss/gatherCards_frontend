@@ -6,7 +6,7 @@ import { stateContext } from "../context/stateContext.jsx";
 
 const NavigationProfile = () => {
 
-  const { isAuthenticated, logOut } = useContext(stateContext)
+  const { isAuthenticated, logOut, cartItemsCount } = useContext(stateContext)
 
   return (
     <>
@@ -29,7 +29,8 @@ const NavigationProfile = () => {
           ) : (
             <>
             <li className="shopping_cart">
-            <img id="shopping_cart_image" src={cart} alt="shopping cart" />
+              <Link to="/auth/shoppingcart"><img id="shopping_cart_image" src={cart} alt="shopping cart" />{cartItemsCount}</Link>
+            
           </li>
               <li>
                 <Link id="login_registration_link" to="/auth/create">
