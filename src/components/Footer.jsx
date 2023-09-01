@@ -1,7 +1,7 @@
 import "./css/Footer.css";
-import facebook from "../assets/facebook.png";
-import twitter from "../assets/twitter.png";
-import instagram from "../assets/instagram.png";
+// import facebook from "../assets/facebook.png";
+// import twitter from "../assets/twitter.png";
+// import instagram from "../assets/instagram.png";
 
 const Footer = () => {
   return (
@@ -21,17 +21,17 @@ const Footer = () => {
       <div className="footer_right">
         <div id="facebook">
           <a href="https://de-de.facebook.com/">
-          <img src={facebook}/>
+          {/* <img src={facebook}/> */}
           </a>
         </div>
         <div id="instagram">
         <a href="https://www.instagram.com/">
-          <img src={instagram} width="60px" />
+          {/* <img src={instagram} width="60px" /> */}
           </a>
         </div>
         <div id="twitter">
           <a href="https://twitter.com/">
-          <img src={twitter}/>
+          {/* <img src={twitter}/> */}
           </a>
         </div>
       </div>
