@@ -27,22 +27,18 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [loadingAuthRequest, setLoadingAuthRequest] = useState(false);
-  const [magicFormats, setMagicFormats] = useState([]);
   const [cart, setCart] = useState([]);
-  const [cartItemsCount, setCartItemsCount] = useState(0);
-
-  const formatUrl =
-    "https://api.scryfall.com/cards/search?include_extras=true&include_variations=true&order=set&q=e%3Awoe&unique=prints";
 
   let { params } = useParams();
 
   useEffect(() => {
-    fetch(formatUrl)
-      .then((res) => res.json())
-      .then((allCards) => {
-        setMagicFormats(allCards);
-        setIsLoading(false);
-      });
+    if (!localStorage.getItem("cart")) {
+      localStorage.setItem("cart",JSON.stringify([]))
+      console.log(JSON.parse(localStorage.getItem("cart")))
+    }else{
+      setCart(JSON.parse(localStorage.getItem("cart")))
+    }
+
   }, []);
 
   useEffect(() => {
@@ -66,9 +62,11 @@ function App() {
 
   const logOut = () => {
     localStorage.removeItem("token");
+    setCart([]);
     setToken(null);
     setUser(null);
     setIsAuthenticated(false);
+
   };
 
   if (isLoading) return <Loading />;
@@ -87,11 +85,8 @@ function App() {
         loadingAuthRequest,
         setLoadingAuthRequest,
         logOut,
-        magicFormats,
         cart,
         setCart,
-        cartItemsCount,
-        setCartItemsCount
       }}
     >
       <div className="wrapper">

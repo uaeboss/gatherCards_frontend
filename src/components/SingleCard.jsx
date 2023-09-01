@@ -45,7 +45,6 @@ export const SingleCard = () => {
         }
       );
       setshowadded(true)
-      // navigate(`/posts/${data._id}`, { replace: true });
       setTimeout(() => {
         navigate(`/marketplace`, { replace: true });
       }, 2000);
@@ -61,12 +60,6 @@ export const SingleCard = () => {
         setCurrentCard(targetCard);
       });
   }, [cardid]);
-
-  // console.log("cardid:", { id });
-  // console.log("aktuelle Karte:", id,image_uris,name);
-  console.log("aktuelle Karte:", currentCard);
-
-
 
   return (
     <>

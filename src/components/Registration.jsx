@@ -57,9 +57,9 @@ export const Registration = () => {
     <>
       <div id="registerform_container">
         <div id="form_size_registration">
-          <form onSubmit={handleRegisterSubmit}>
+          <form id="register_form_color" onSubmit={handleRegisterSubmit}>
             <input
-              id="username"
+              id="username "
               type="text"
               placeholder="Username"
               value={username}

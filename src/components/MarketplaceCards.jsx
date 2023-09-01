@@ -8,24 +8,22 @@ export const MarketplaceCards = ({
   qty,
   price,
   image,
-  seller,
-  // setCartItemsCount,
-  // cartItemsCount
+  seller
 }) => {
   const { cart, setCart } = useContext(stateContext);
 
   const handleclick = () => {
-    let existingCard = cart.find((e) => e?.cardId === cardId);
+    let existingCard = cart?.find((e) => e?.cardId === cardId);
     if (existingCard !== undefined) {
       let newCart = cart.map((e) =>
         existingCard.cardId === e.cardId ? { ...e, amount: (e.amount += 1) } : e
       );
+      localStorage.setItem("cart",JSON.stringify(newCart))
       setCart(newCart);
     } else {
       let currentCard = { cardId, name, qty, price, image, seller, amount: 1 };
-      // console.log(currentCard);
-      // cart.push(currentCard);
-      setCart([...cart, currentCard]);
+      cart && localStorage.setItem("cart",JSON.stringify([...cart, currentCard]))
+      cart &&  setCart([...cart, currentCard]);
     }
   };
 
@@ -34,9 +32,8 @@ export const MarketplaceCards = ({
       <div id="marketplacecards_container">
         <img id="border_radius" src={image} width="250px" />
         <div id="marketplacecards_text">
-          <p>Name: {name}</p>
           <p>Number of available cards: {qty}</p>
-          <p>Price per card:{price} €</p>
+          <p>Price per card: {price} €</p>
           <p>Seller: {seller}</p>
           <button id="marketplacecards_add_btn" onClick={handleclick}>
             Add to cart
