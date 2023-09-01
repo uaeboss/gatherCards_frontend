@@ -20,18 +20,14 @@ export const MarketplaceCards = ({
       let newCart = cart.map((e) =>
         existingCard.cardId === e.cardId ? { ...e, amount: (e.amount += 1) } : e
       );
-      console.log(newCart);
       setCart(newCart);
     } else {
-      console.log(cardId);
       let currentCard = { cardId, name, qty, price, image, seller, amount: 1 };
       // console.log(currentCard);
       // cart.push(currentCard);
       setCart([...cart, currentCard]);
     }
-    console.log(cart);
-    console.log();
-    };
+  };
 
   return (
     <>
