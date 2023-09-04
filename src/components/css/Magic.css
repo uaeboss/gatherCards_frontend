@@ -1,8 +1,9 @@
 .magic_container {
-    height: 900px;
+    height: 100%;
+    width: 80vw;
     display: flex;
     justify-content: space-between;
-    align-items: space-between;
+    align-items: center;
     flex-wrap: wrap;
     margin-top: 35px;
 }
@@ -16,42 +17,37 @@
 #woe {
     transition: all .2s ease-in-out;
     box-shadow: 0 0 10px #000;
-    max-height: 393px;
+    margin: 25px;
 }
 #lotr {
     transition: all .2s ease-in-out;
     box-shadow: 0 0 10px #000;
-    max-height: 393px;
+    margin: 25px;
 }
 #mom {
     transition: all .2s ease-in-out;
     box-shadow: 0 0 10px #000;
-    max-height: 393px;
+    margin: 25px;
 }
 #one {
     transition: all .2s ease-in-out;
     box-shadow: 0 0 10px #000;
-    max-height: 393px;
+    margin: 25px;
 }
 
 #woe:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 50px #000;
+    box-shadow: 0 0 25px #000;
 }
 #lotr:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 50px #000;
+    box-shadow: 0 0 25px #000;
 }
 #mom:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 50px #000;
+    box-shadow: 0 0 25px #000;
 }
 #one:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 50px #000;
-}
-
-#pad_mar {
-    margin: 0;
-    padding: 0;
+    box-shadow: 0 0 25px #000;
 }

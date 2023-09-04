@@ -5,7 +5,6 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import { useState, useEffect } from "react";
 import { Marketplace } from "./components/Marketplace";
-// import { News } from "./components/News";
 import LoginForm from "./components/LoginForm";
 import Shoppingcart from "./components/Shoppingcart";
 import Registration from "./components/Registration";
@@ -33,12 +32,11 @@ function App() {
 
   useEffect(() => {
     if (!localStorage.getItem("cart")) {
-      localStorage.setItem("cart",JSON.stringify([]))
-      console.log(JSON.parse(localStorage.getItem("cart")))
-    }else{
-      setCart(JSON.parse(localStorage.getItem("cart")))
+      localStorage.setItem("cart", JSON.stringify([]));
+      console.log(JSON.parse(localStorage.getItem("cart")));
+    } else {
+      setCart(JSON.parse(localStorage.getItem("cart")));
     }
-
   }, []);
 
   useEffect(() => {
@@ -66,7 +64,6 @@ function App() {
     setToken(null);
     setUser(null);
     setIsAuthenticated(false);
-
   };
 
   if (isLoading) return <Loading />;
@@ -105,14 +102,12 @@ function App() {
                   path="magic/:params"
                   element={<Sets params={params} />}
                 />
-
-                {/* <Route path="news" element={<News />} /> */}
                 <Route path="marketplace" element={<Marketplace />} />
                 <Route path="login" element={<LoginForm />} />
                 <Route path="register" element={<Registration />} />
                 <Route path="auth" element={<ProtectedLayout />}>
                   <Route index element={<UserProfile />} />
-                  <Route path="shoppingcart" element={<Shoppingcart />}/>
+                  <Route path="shoppingcart" element={<Shoppingcart />} />
                   <Route path="create" element={<SellCard />} />
                   <Route path="create/:cardid" element={<SingleCard />} />
                 </Route>
