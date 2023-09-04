@@ -17,6 +17,7 @@
     transition: all .2s ease-in-out;
     box-shadow: 0 0 10px #000;
     max-height: 393px;
+    border: 1px solid #7e7979;
 }
 #lotr {
     transition: all .2s ease-in-out;

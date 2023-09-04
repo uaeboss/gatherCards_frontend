@@ -106,7 +106,6 @@ function App() {
                   element={<Sets params={params} />}
                 />
 
-                {/* <Route path="news" element={<News />} /> */}
                 <Route path="marketplace" element={<Marketplace />} />
                 <Route path="login" element={<LoginForm />} />
                 <Route path="register" element={<Registration />} />

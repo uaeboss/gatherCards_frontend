@@ -19,13 +19,6 @@ const { isAuthenticated, user, logOut}=useContext(stateContext)
             <NavLink to="/marketplace">Marketplace</NavLink>
           </nav>
         </div>
-        <div className="nav_selector">
-        {user && (
-                  <Link to="/auth">
-                    <h2>Willkommen zurück, {user.username}!</h2>
-                  </Link>
-              )}
-        </div>
         <div className="nav_profile">
           <Navigation_Profile logOut={logOut} isAuthenticated={isAuthenticated} user={user} />
         </div>
