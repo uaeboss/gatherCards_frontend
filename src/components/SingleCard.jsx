@@ -21,11 +21,6 @@ export const SingleCard = () => {
 
   const onChangeHandler = (e) =>
     setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  // const isAvailable = (e) =>
-  //   setFormState((prev) => ({
-  //     ...prev,
-  //     available: e.target.name === "notavailable" ? false : true,
-  //   }));
 
   const handleSubmit = async (e) => {
     try {

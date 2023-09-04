@@ -17,6 +17,7 @@ import Loading from "./components/Loading";
 import Magic from "./components/Magic";
 import Sets from "./components/Sets";
 import SellCard from "./components/SellCard";
+import MyCards from "./components/MyCards";
 import { stateContext } from "./context/stateContext.jsx";
 import { SingleCard } from "./components/SingleCard";
 import { Checkout } from "./components/Checkout";
@@ -110,6 +111,7 @@ function App() {
                   <Route index element={<UserProfile />} />
                   <Route path="shoppingcart" element={<Shoppingcart />} />
                   <Route path="shoppingcart/checkout" element={<Checkout />} />
+                  <Route path="mycards" element={<MyCards />} />
                   <Route path="create" element={<SellCard />} />
                   <Route path="create/:cardid" element={<SingleCard />} />
                 </Route>
