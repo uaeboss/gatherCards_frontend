@@ -7,7 +7,7 @@ import Pagination from "./Pagination";
 const Sets = () => {
   const [sets, setSets] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(8);
+  const [postPerPage, setPostPerPage] = useState(12);
   let { params } = useParams();
 
   useEffect(() => {
