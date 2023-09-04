@@ -7,6 +7,7 @@ import bro from "../assets/bro.png";
 import dmu from "../assets/dmu.jpg";
 import snc from "../assets/snc.jpg";
 import neo from "../assets/neo.jpg";
+import vow from "../assets/vow.jpg";
 import { Link } from "react-router-dom";
 
 const Magic = () => {
@@ -36,6 +37,9 @@ const Magic = () => {
         </Link>
         <Link to="/magic/neo">
             <img id="neo" src={neo} width="600px" />
+        </Link>
+        <Link to="/magic/vow">
+            <img id="vow" src={vow} width="600px" />
         </Link>
       </div>
     </>
