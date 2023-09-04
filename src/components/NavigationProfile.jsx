@@ -1,4 +1,4 @@
-import cart_img from "../assets/cart_white.png";
+import cartimg from "../assets/cart_white.png";
 // import Modal from "./Modal/Modal";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -8,10 +8,24 @@ const NavigationProfile = () => {
 
   const { isAuthenticated, logOut, cart } = useContext(stateContext)
 
+  const cart_img = {
+    backgroundImage: `url(${cartimg})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    width: "100px",
+    height: "50px",
+  };
+
   return (
     <>
       <div className="profile_container">
         <div className="profile_detail">
+        <Link to="/auth/shoppingcart">
+                <div id="cart_number" style={cart_img}>
+                <h2>{cart.length}</h2>
+                </div>
+              </Link>
         <ul>
           {!isAuthenticated ? (
             <>
@@ -28,10 +42,6 @@ const NavigationProfile = () => {
             </>
           ) : (
             <>
-            <li className="shopping_cart">
-              <Link to="/auth/shoppingcart"><img id="shopping_cart_image" src={cart_img} alt="shopping cart" />{cart.length}</Link>
-            
-          </li>
               <li>
                 <Link id="login_registration_link" to="/auth/create">
                   Sell Card
