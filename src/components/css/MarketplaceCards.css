@@ -7,8 +7,9 @@
     color: #fff;
     margin-top: 50px;
     box-shadow: 0 0 10px #000;
-}
-#marketplacecards_text  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #marketplacecards_add_btn {

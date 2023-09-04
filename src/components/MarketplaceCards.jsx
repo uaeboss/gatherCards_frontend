@@ -29,6 +29,7 @@ export const MarketplaceCards = ({
 
   return (
     <>
+
       <div id="marketplacecards_container">
         <img id="border_radius" src={image} width="250px" />
         <div id="marketplacecards_text">

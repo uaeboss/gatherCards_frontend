@@ -4,6 +4,7 @@ import Navigation_Profile from "./NavigationProfile";
 import { Link } from "react-router-dom";
 import "./css/Navigation.css";
 import { stateContext } from "../context/stateContext.jsx";
+import sitelogo from "../assets/white_name.png"
 
 const Navigation = () => {
 const { isAuthenticated, user, logOut}=useContext(stateContext)
@@ -20,11 +21,12 @@ const { isAuthenticated, user, logOut}=useContext(stateContext)
           </nav>
         </div>
         <div className="nav_selector">
-        {user && (
+        {/* {user && (
                   <Link to="/auth">
                     <h2>Willkommen zurück, {user.username}!</h2>
                   </Link>
-              )}
+              )} */}
+          <img src={sitelogo} />
         </div>
         <div className="nav_profile">
           <Navigation_Profile logOut={logOut} isAuthenticated={isAuthenticated} user={user} />
