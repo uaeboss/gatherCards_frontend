@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import {useContext} from 'react'
 import Navigation_Profile from "./NavigationProfile";
-import { Link } from "react-router-dom";
 import "./css/Navigation.css";
 import { stateContext } from "../context/stateContext.jsx";
 import sitelogo from "../assets/white_name.png"

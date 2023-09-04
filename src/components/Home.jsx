@@ -22,7 +22,7 @@ const Home = () => {
       <img id="woenews_img_left" src={twitch} width="80%"/>
         <div id="woe_news_text_right">
           <p id="p_announcement">Check out the prerelease-events on Twitch!</p>
-          <p id="p_small">From </p>
+          <p id="p_small">From 09/01/2023 to 09/08/2023</p>
           </div>
           
       </div>

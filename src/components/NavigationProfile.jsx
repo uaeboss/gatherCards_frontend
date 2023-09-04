@@ -1,5 +1,4 @@
 import cartimg from "../assets/cart_white.png";
-// import Modal from "./Modal/Modal";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { stateContext } from "../context/stateContext.jsx";

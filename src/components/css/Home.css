@@ -14,9 +14,8 @@
 
 #woe_news_text_left {
     width: 70%;
-    color: #000;
-    background-color: #fff;
-    opacity: 0.9;
+    color: #fff;
+    background-color: #807d7d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,8 +27,8 @@
 
 #woe_news_text_right {
     width: 70%;
-    color: #000;
-    background-color: #fff;
+    color: #fff;
+    background-color: #807d7d;
     opacity: 0.9;
     display: flex;
     justify-content: center;
