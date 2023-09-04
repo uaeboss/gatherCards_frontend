@@ -20,11 +20,6 @@ const { isAuthenticated, user, logOut}=useContext(stateContext)
           </nav>
         </div>
         <div className="nav_selector">
-        {/* {user && (
-                  <Link to="/auth">
-                    <h2>Willkommen zurück, {user.username}!</h2>
-                  </Link>
-              )} */}
           <img src={sitelogo} />
         </div>
         <div className="nav_profile">
