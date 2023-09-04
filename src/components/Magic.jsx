@@ -3,24 +3,39 @@ import woe from "../assets/woe.jpg";
 import lotr from "../assets/lotr.jpg";
 import mom from "../assets/mom.png";
 import one from "../assets/one.png";
+import bro from "../assets/bro.png";
+import dmu from "../assets/dmu.jpg";
+import snc from "../assets/snc.jpg";
+import neo from "../assets/neo.jpg";
 import { Link } from "react-router-dom";
 
 const Magic = () => {
   return (
     <>
       <div className="magic_container">
-        
-        <Link id="woe" to="/magic/woe">
-            <img src={woe} width="500px" />
+        <Link to="/magic/woe">
+            <img id="woe" src={woe} width="600px" />
         </Link>
-        <Link id="lotr" to="/magic/ltr">
-            <img src={lotr} width="500px" />
+        <Link to="/magic/ltr">
+            <img id="lotr" src={lotr} width="600px" />
         </Link>
-        <Link id="mom" to="/magic/mom">
-            <img src={mom} width="500px" />
+        <Link to="/magic/mom">
+            <img id="mom" src={mom} width="600px" />
         </Link>
-        <Link id="one" to="/magic/one">
-            <img src={one} width="500px" />
+        <Link to="/magic/one">
+            <img id="one" src={one} width="600px" />
+        </Link>
+        <Link to="/magic/bro">
+            <img id="bro" src={bro} width="600px" />
+        </Link>
+        <Link to="/magic/dmu">
+            <img id="dmu" src={dmu} width="600px" />
+        </Link>
+        <Link to="/magic/snc">
+            <img id="snc" src={snc} width="600px" />
+        </Link>
+        <Link to="/magic/neo">
+            <img id="neo" src={neo} width="600px" />
         </Link>
       </div>
     </>

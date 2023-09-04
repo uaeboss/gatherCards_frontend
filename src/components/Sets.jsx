@@ -7,7 +7,7 @@ import Pagination from "./Pagination";
 const Sets = () => {
   const [sets, setSets] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(10);
+  const [postPerPage, setPostPerPage] = useState(8);
   let { params } = useParams();
 
   useEffect(() => {
@@ -73,18 +73,5 @@ const Sets = () => {
     </>
   );
 };
-
-{
-  /* <SingleCard
-                name={sets.data[0].name}
-                artist={sets.data[0].artist}
-                type={sets.data[0].type_line}
-                text={sets.data[0].oracle_text}
-                power={sets.data[0].power}
-                toughness={sets.data[0].toughness}
-                mana={sets.data[0].mana_cost}
-                image={sets.data[0].image_uris.normal}
-              /> */
-}
 
 export default Sets;
