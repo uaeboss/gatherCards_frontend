@@ -51,8 +51,13 @@
     text-shadow: 0 0 3px #86C232;
 }
 
-#facebook > a > img, #twitter > a > img, #inatagram > a > img {
+#facebook > a > img, #twitter > a > img, #instagram > a > img {
     max-width: 60px;
+}
+
+#twitter {
+  display: flex;
+  align-items: center;
 }
 
 #newsletter {
