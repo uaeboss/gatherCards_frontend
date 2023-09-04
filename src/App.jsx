@@ -19,6 +19,7 @@ import Sets from "./components/Sets";
 import SellCard from "./components/SellCard";
 import { stateContext } from "./context/stateContext.jsx";
 import { SingleCard } from "./components/SingleCard";
+import { Checkout } from "./components/Checkout";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -108,6 +109,7 @@ function App() {
                 <Route path="auth" element={<ProtectedLayout />}>
                   <Route index element={<UserProfile />} />
                   <Route path="shoppingcart" element={<Shoppingcart />} />
+                  <Route path="shoppingcart/checkout" element={<Checkout />} />
                   <Route path="create" element={<SellCard />} />
                   <Route path="create/:cardid" element={<SingleCard />} />
                 </Route>
