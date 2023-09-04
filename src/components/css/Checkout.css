@@ -1,0 +1,10 @@
+#purchase_confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#checkout_h2 {
+    color: #222629;
+}

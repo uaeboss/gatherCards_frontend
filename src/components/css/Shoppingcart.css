@@ -7,6 +7,7 @@
   padding-top: 20px;
   padding-bottom: 5px;
 }
+
 #shop_cart_qty {
   width: 50px;
 }
@@ -21,6 +22,11 @@
   font-size: 2rem;
   color: #000;
   margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+#cart_container {
+  height: 100%;
 }
 
 .sc_container {
@@ -62,7 +68,8 @@
 }
 
 #total_price {
-  width: 140px;
+  width: 200px;
+  font-size: 1.5rem;
 }
 
 #checkout {
@@ -112,4 +119,89 @@
 
   #btn_checkout:focus {
     outline: none;
+  }
+
+  #payment_details {
+    border-top: 3px solid black;
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #payment_buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  #buy-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  #details_payment_container {
+    height: 100%;
+    width: 40vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #address {
+    width: 100%;
+
+  }
+
+  #address_flex {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  #payment_flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #payment_select {
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #label_space {
+    margin: 20px 0 0 0;
+  }
+
+  #input_width {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
   }
