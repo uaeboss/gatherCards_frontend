@@ -6,7 +6,7 @@
 }
 
 .wrapper {
-  background-color: #ffffff;
+  background-color: #000;
   width: 100vw;
   height: auto;
   display: flex;
@@ -21,7 +21,7 @@
   height: auto;
   min-height: 100vh;
   grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
-  grid-template-rows: 155px 1.2fr 1.7fr 200px;
+  grid-template-rows: 130px 1.2fr 1.7fr 200px;
   gap: 0px 0px;
   grid-template-areas:
     "header header header header"
@@ -40,7 +40,7 @@
 .header {
   grid-area: header;
   background-color: #222629;
-  height: 155px;
+  height: 130px;
   box-shadow: 0 0 10px black;
   z-index: 10;
 }
