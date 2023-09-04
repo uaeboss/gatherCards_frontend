@@ -52,7 +52,7 @@
     width: 100%;
 }
 
-input[type=text], input[type=number], input[type=search] {
+#price, #qty {
     padding: 5px 0 2px 2px;
     font-size: 1.2rem;
     display: inline-block;
