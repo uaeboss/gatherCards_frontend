@@ -1,3 +1,5 @@
+import "./css/Pagination.css"
+
 const Pagination = ({
   totalPosts,
   postPerPage,
@@ -12,17 +14,27 @@ const Pagination = ({
 
   return (
     <div className="pagination">
-      {pages.map((page, index) => {
-        return (
-          <button
-            className={page === currentPage ? "active" : ""}
-            key={index}
-            onClick={() => setCurrentPage(page)}
-          >
-            {page}
-          </button>
-        );
-      })}
+      {currentPage !== 1 && (
+        <button
+          id="space_btn"
+          onClick={() => setCurrentPage(currentPage - 1)}
+        >
+          Previous
+        </button>
+      )}
+
+      <button className="active">
+        {currentPage}
+      </button>
+
+      {currentPage !== Math.ceil(totalPosts / postPerPage) && (
+        <button
+          id="space_btn"
+          onClick={() => setCurrentPage(currentPage + 1)}
+        >
+          Next
+        </button>
+      )}
     </div>
   );
 };
