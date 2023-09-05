@@ -83,6 +83,7 @@
   align-items: center;
   width: 70%;
   height: 100%;
+  margin-right: 30px;
 }
 .profile_detail > ul {
   display: flex;
