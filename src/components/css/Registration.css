@@ -23,6 +23,12 @@ input:focus{
     outline: none;
 }
 
+::placeholder {
+    color: #fff;
+    opacity: 0.9;
+    font-weight: 100;
+  }
+
 #registration_btn {
     width: 60%;
     background-color: #61892F;
@@ -50,6 +56,10 @@ input:focus{
     justify-content: center;
     margin-bottom: 1rem;
     color: #fff;
+}
+
+#signin_size > p {
+    margin-bottom: 15px;
 }
 
 #singin_link {

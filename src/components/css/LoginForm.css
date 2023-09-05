@@ -3,7 +3,6 @@ form {
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    height: 70%;
     width: 60%;
     margin: 3rem 0 3rem 0;
 }
@@ -51,6 +50,10 @@ input:focus{
     justify-content: center;
     margin-bottom: 1rem;
     color: #fff;
+}
+
+#signup_size > p {
+    margin-bottom: 15px;
 }
 
 #singup_link {
