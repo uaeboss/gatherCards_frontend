@@ -109,7 +109,7 @@ export const SingleCard = () => {
                         type="number"
                         name="price"
                         id="price"
-                        min="1.00"
+                        min="0.01"
                         step="any"
                         placeholder="Price"
                         onChange={onChangeHandler}
@@ -122,7 +122,7 @@ export const SingleCard = () => {
                   </button>
                 </form>
               </div>
-              <button id="sell_back_btn">Zurück</button>
+              <button id="sell_back_btn" onClick={() => navigate("/auth/create")}>Zurück</button>
             </div>
           </div>
         </>
