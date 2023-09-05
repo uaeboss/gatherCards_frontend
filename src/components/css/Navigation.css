@@ -140,3 +140,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
+#cart_number > h2 {
+  color: #fff;
+}

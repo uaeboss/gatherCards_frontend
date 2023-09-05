@@ -26,9 +26,11 @@
     margin: 20px;
 }
 
-#h2_black {
-    color: #000;
+#h2_green {
+    color: #61892F;
     margin-top: 50px;
+    font-size: 2.2rem;
+    text-shadow: #86c232 1px 1px 1px;
 }
 
 .center_container {
