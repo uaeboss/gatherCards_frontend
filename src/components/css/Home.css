@@ -15,7 +15,7 @@
 #woe_news_text_left {
     width: 70%;
     color: #fff;
-    background-color: #807d7d;
+    background-color: #363c41;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@
 #woe_news_text_right {
     width: 70%;
     color: #fff;
-    background-color: #807d7d;
+    background-color: #363c41;
     opacity: 0.9;
     display: flex;
     justify-content: center;
@@ -44,8 +44,9 @@
 }
 
 #p_small {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-style: italic;
+    margin-top: 15px;
 }
 
 #woenews_img_right {
