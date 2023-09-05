@@ -34,7 +34,7 @@ export const MarketplaceCards = ({
         <img id="border_radius" src={image} width="250px" />
         <div id="marketplacecards_text">
           <p>Number of available cards: {qty}</p>
-          <p>Price per card: {price} €</p>
+          <p>Price: {price.toFixed(2)} €</p>
           <p>Seller: {seller}</p>
           <button id="marketplacecards_add_btn" onClick={handleclick}>
             Add to cart
