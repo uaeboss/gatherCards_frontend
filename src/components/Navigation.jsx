@@ -14,13 +14,14 @@ const { isAuthenticated, user, logOut}=useContext(stateContext)
         <div className="nav_links">
           <nav>
             <NavLink to="/">Home</NavLink>
-            {/* <NavLink to="/news">News</NavLink> */}
             <NavLink to="/magic">Magic</NavLink>
             <NavLink to="/marketplace">Marketplace</NavLink>
           </nav>
         </div>
         <div className="nav_selector">
+          <NavLink to="/">
           <img src={sitelogo} />
+          </NavLink>
         </div>
         <div className="nav_profile">
           <Navigation_Profile logOut={logOut} isAuthenticated={isAuthenticated} user={user} />
