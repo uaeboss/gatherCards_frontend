@@ -49,7 +49,7 @@ const MyCards = () => {
                 <div id="mycard_display">
                 <p id="test_p">Quantity: {mycard.qty}</p>
                 <p id="test_p">Price: {mycard.price.toFixed(2)} €</p>
-                <button id="marketplacecards_add_btn" onClick={handleDelete}>Delete card</button>
+                <button id="marketplacecards_add_btn" onClick={() => handleDelete(mycard._id)}>Delete card</button>
                 </div>
               </div>
             ))}

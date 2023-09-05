@@ -69,6 +69,7 @@ input:focus{
  background-color: #222629;
  margin-top: 2rem;
  border-radius: 1rem;
+ box-shadow: 0 0 5px #000;
 }
 
 #h2_welcome {

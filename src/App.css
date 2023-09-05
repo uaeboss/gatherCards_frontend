@@ -5,8 +5,12 @@
   font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
 .wrapper {
-  background-color: #000;
+  background-color: #fff;
   width: 100vw;
   height: auto;
   display: flex;
@@ -17,7 +21,7 @@
 .content_container {
   display: grid;
   width: 100vw;
-  background-color: #222629;
+  background-color: #181818;
   height: auto;
   min-height: 100vh;
   grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
@@ -41,7 +45,9 @@
   grid-area: header;
   background-color: #222629;
   height: 130px;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 15px #000;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
   z-index: 10;
 }
 .sidenavl {
@@ -70,9 +76,9 @@
   height: 200px;
   justify-content: space-evenly;
   background-color: #222629;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  box-shadow: 0 0 10px black;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 15px #fff;
 }
 
 .shadow {
@@ -95,5 +101,22 @@
   }
   &.right {
     box-shadow: 15px 0px 10px -15px #111;    
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .content_container {
+    display: grid;
+    width: 100vw;
+    background-color: #222629;
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
+    grid-template-rows: 130px 1.2fr 1.7fr 200px;
+    grid-template-areas:
+      "header header header"
+      ". site_content ."
+      ". site_content ."
+      "footer footer footer";
   }
 }
