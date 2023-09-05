@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./css/Sets.css";
-// import SingleCard from "./SingleCard.jsx";
 import Pagination from "./Pagination";
+import { useNavigate } from "react-router-dom";
 
 const Sets = () => {
   const [sets, setSets] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(12);
+  const navigate = useNavigate();
   let { params } = useParams();
 
   useEffect(() => {
@@ -32,6 +33,9 @@ const Sets = () => {
 
   return (
     <>
+      <div id="back_btn_sets">
+        <button id="btn_sets" onClick={() => navigate(-1)} >Back to overview</button>
+      </div>
       <div id="set_display">
         {currentPosts &&
           currentPosts
