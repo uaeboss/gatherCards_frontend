@@ -9,17 +9,18 @@ const MyCards = () => {
   const [showdeleted, setshowdeleted] = useState(false);
   const { user } = useContext(stateContext);
 
+  const getMyCards = async () => {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_BACKENDURL}/cards`
+      );
+      setMyCards(data);
+    } catch (error) {
+      toast.error("Your cards could not be loaded!");
+    }
+  };
+
   useEffect(() => {
-    const getMyCards = async () => {
-      try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_BACKENDURL}/cards`
-        );
-        setMyCards(data);
-      } catch (error) {
-        toast.error("Your cards could not be loaded!");
-      }
-    };
     getMyCards();
   }, []);
 
@@ -32,6 +33,7 @@ const MyCards = () => {
         }
       );
       setshowdeleted(true);
+      getMyCards();
       setTimeout(() => {
         setshowdeleted(false);
       }, 2000);
