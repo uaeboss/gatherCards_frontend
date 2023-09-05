@@ -60,6 +60,7 @@ export const Registration = () => {
           <form id="register_form_color" onSubmit={handleRegisterSubmit}>
             <input
               id="username"
+              className="registration_input"
               type="text"
               placeholder="Username"
               value={username}
@@ -68,6 +69,7 @@ export const Registration = () => {
             <br />
             <input
               id="first_name"
+              className="registration_input"
               type="text"
               placeholder="First name"
               value={first_name}
@@ -76,6 +78,7 @@ export const Registration = () => {
             <br />
             <input
               id="last_name"
+              className="registration_input"
               type="text"
               placeholder="Last name"
               value={last_name}
@@ -84,6 +87,7 @@ export const Registration = () => {
             <br />
             <input
               id="email"
+              className="registration_input"
               type="text"
               placeholder="Email address"
               value={email}
@@ -92,6 +96,7 @@ export const Registration = () => {
             <br />
             <input
               id="password"
+              className="registration_input"
               type="password"
               placeholder="Password"
               value={password}

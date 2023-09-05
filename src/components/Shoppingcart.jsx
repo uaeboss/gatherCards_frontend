@@ -8,6 +8,10 @@ import creditcard from "../assets/creditcard.png";
 const Shoppingcart = () => {
   const { cart, setCart } = useContext(stateContext);
   const navigate = useNavigate();
+  const inputstyle = {
+    borderBottom: '2px solid #000',
+    color: '#000'
+  };
 
   const [showPaymentDetails, setShowPaymentDetails] = useState(false);
   const [paypalChecked, setPaypalChecked] = useState(false);
@@ -57,7 +61,7 @@ const Shoppingcart = () => {
 
   const handlePayClick = () => {
     if (!creditCardChecked && !paypalChecked) {
-      alert("Please select a pyment option!")
+      alert("Please select a payment option!")
     } else {
       setCart([]);
       navigate("checkout")
@@ -118,21 +122,20 @@ const Shoppingcart = () => {
                               <label id="label_space">
                                 Address:
                                 </label>
-                                <input type="text" />
-                              
+                                <input type="text" className="shoppingcart_input" style={inputstyle}></input>
                             </div>
                             <div>
                               <label id="label_space">
                                 Zip Code:
                                 </label>
-                                <input type="text" />
+                                <input type="text" className="shoppingcart_input" style={inputstyle}></input>
                               
                             </div>
                             <div>
                               <label id="label_space">
                                 City:
                                 </label>
-                                <input className="shopping_input" type="text" />
+                                <input type="text" className="shoppingcart_input" style={inputstyle}></input>
                               
                             </div>
                           

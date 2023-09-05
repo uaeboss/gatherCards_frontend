@@ -76,7 +76,11 @@ input:focus{
 
 #search_btn {
     height: 35px;
-    margin-left: 15px;
+    margin-left: 25px;
+    background-color: #474b4f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #search_results {
