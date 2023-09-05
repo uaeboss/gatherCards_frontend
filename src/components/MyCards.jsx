@@ -37,7 +37,7 @@ const MyCards = () => {
       setshowdeleted(false)
       }, 2000);
     } catch (error) {
-      console.error("Error deleting card", error);
+      alert("Error deleting card", error);
     }
   };
 
