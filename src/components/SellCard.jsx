@@ -8,7 +8,7 @@ const SellCard = ({ search }) => {
   const [searchCard, setSearchCard] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(10);
+  const [postPerPage, setPostPerPage] = useState(12);
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
