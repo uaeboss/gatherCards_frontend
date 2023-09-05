@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { stateContext } from "../context/stateContext.jsx";
 import { registerUser } from "../utils/authenticationUtils";
+import { toast } from "react-toastify";
 import Loading from "./Loading";
 
 export const Registration = () => {
@@ -46,7 +47,7 @@ export const Registration = () => {
       localStorage.setItem("token", data.token);
     } catch (error) {
       setLoadingAuthRequest(false);
-      console.log(error.message);
+      toast.error(error.message);
     }
   };
 

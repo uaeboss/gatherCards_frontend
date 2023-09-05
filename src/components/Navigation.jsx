@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
-import {useContext} from 'react'
+import { useContext } from "react";
 import Navigation_Profile from "./NavigationProfile";
 import "./css/Navigation.css";
 import { stateContext } from "../context/stateContext.jsx";
-import sitelogo from "../assets/white_name.png"
+import sitelogo from "../assets/white_name.png";
 
 const Navigation = () => {
-const { isAuthenticated, user, logOut}=useContext(stateContext)
+  const { isAuthenticated, user, logOut } = useContext(stateContext);
 
   return (
     <>
@@ -20,11 +20,15 @@ const { isAuthenticated, user, logOut}=useContext(stateContext)
         </div>
         <div className="nav_selector">
           <NavLink to="/">
-          <img src={sitelogo} />
+            <img src={sitelogo} />
           </NavLink>
         </div>
         <div className="nav_profile">
-          <Navigation_Profile logOut={logOut} isAuthenticated={isAuthenticated} user={user} />
+          <Navigation_Profile
+            logOut={logOut}
+            isAuthenticated={isAuthenticated}
+            user={user}
+          />
         </div>
       </div>
     </>

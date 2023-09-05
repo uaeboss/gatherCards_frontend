@@ -8,7 +8,7 @@ const Footer = () => {
     <>
       <div className="footer_width">
         <div className="footer_left">
-        <div id="links_left">
+          <div id="links_left">
             <a href="Impressum">Impressum</a>
             <a href="Kontakt">Kontakt</a>
             <a href="Versand">Versand</a>
@@ -18,10 +18,9 @@ const Footer = () => {
             <a href="Hilfe">Hilfe</a>
             <a href="FAQ">FAQ</a>
           </div>
-          
         </div>
         <div className="footer_mid">
-        <div id="newsletter">
+          <div id="newsletter">
             <input type="email" placeholder="Subscribe to our newsletter" />
             <button>Subscribe</button>
           </div>

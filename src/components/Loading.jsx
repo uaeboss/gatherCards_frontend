@@ -1,10 +1,7 @@
-import "./css/Loading.css"
+import "./css/Loading.css";
 
 const Loading = () => {
-    return (
-      <div className='spinner' role='status'>
-      </div>
-    );
-  };
-  
-  export default Loading;
+  return <div className="spinner" role="status"></div>;
+};
+
+export default Loading;
