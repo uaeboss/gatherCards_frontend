@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 import "./css/Shoppingcart.css";
 import paypal from "../assets/paypal.png";
 import creditcard from "../assets/creditcard.png";
+import { toast } from "react-toastify";
 
 const Shoppingcart = () => {
   const { cart, setCart } = useContext(stateContext);
   const navigate = useNavigate();
   const inputstyle = {
-    borderBottom: '2px solid #000',
-    color: '#000'
+    borderBottom: "2px solid #000",
+    color: "#000",
   };
 
   const [showPaymentDetails, setShowPaymentDetails] = useState(false);
@@ -46,11 +47,6 @@ const Shoppingcart = () => {
     }, 0);
   };
 
-  useEffect(() => {
-    const totalPrice = calculateTotalPrice();
-    console.log("Total Price:", totalPrice);
-  }, [cart]);
-
   const handleCheckoutClick = () => {
     setShowPaymentDetails(true);
   };
@@ -61,17 +57,15 @@ const Shoppingcart = () => {
 
   const handlePayClick = () => {
     if (!creditCardChecked && !paypalChecked) {
-      alert("Please select a payment option!")
+      toast("Please select a payment option!");
     } else {
       setCart([]);
-      navigate("checkout")
+      navigate("checkout");
       setTimeout(() => {
         navigate(`/`, { replace: true });
       }, 3000);
     }
-    
   };
-
 
   return (
     <>
@@ -117,28 +111,30 @@ const Shoppingcart = () => {
                     <div id="payment_flex">
                       <div id="input_width">
                         <div id="address_flex">
-                          
-                            <div>
-                              <label id="label_space">
-                                Address:
-                                </label>
-                                <input type="text" className="shoppingcart_input" style={inputstyle}></input>
-                            </div>
-                            <div>
-                              <label id="label_space">
-                                Zip Code:
-                                </label>
-                                <input type="text" className="shoppingcart_input" style={inputstyle}></input>
-                              
-                            </div>
-                            <div>
-                              <label id="label_space">
-                                City:
-                                </label>
-                                <input type="text" className="shoppingcart_input" style={inputstyle}></input>
-                              
-                            </div>
-                          
+                          <div>
+                            <label id="label_space">Address:</label>
+                            <input
+                              type="text"
+                              className="shoppingcart_input"
+                              style={inputstyle}
+                            ></input>
+                          </div>
+                          <div>
+                            <label id="label_space">Zip Code:</label>
+                            <input
+                              type="text"
+                              className="shoppingcart_input"
+                              style={inputstyle}
+                            ></input>
+                          </div>
+                          <div>
+                            <label id="label_space">City:</label>
+                            <input
+                              type="text"
+                              className="shoppingcart_input"
+                              style={inputstyle}
+                            ></input>
+                          </div>
                         </div>
                       </div>
                       <div id="payment_select">

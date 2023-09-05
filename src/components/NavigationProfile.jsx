@@ -46,7 +46,7 @@ const NavigationProfile = () => {
                   </Link>
                 </li>
                 <Link id="login_registration_link" to="/auth/mycards">
-                <li>My cards</li>
+                  <li>My cards</li>
                 </Link>
                 <li id="logout" onClick={logOut}>
                   <p>Logout</p>

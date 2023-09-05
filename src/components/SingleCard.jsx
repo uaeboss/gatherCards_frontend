@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const SingleCard = () => {
-  const [showadded, setshowadded] = useState(false)
+  const [showadded, setshowadded] = useState(false);
   const [{ id, name, qty, price, image }, setFormState] = useState({
     id: "",
     name: "",
@@ -25,7 +26,7 @@ export const SingleCard = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      if (!qty || !price) return alert("Please fill out every field!");
+      if (!qty || !price) return toast("Please fill out every field!");
       const { data } = await axios.post(
         `${import.meta.env.VITE_BACKENDURL}/cards`,
         {
@@ -33,18 +34,18 @@ export const SingleCard = () => {
           name: currentCard?.name,
           qty,
           price,
-          image: currentCard?.image_uris.normal
+          image: currentCard?.image_uris.normal,
         },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
-      setshowadded(true)
+      setshowadded(true);
       setTimeout(() => {
         navigate(`/marketplace`, { replace: true });
       }, 2000);
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 
@@ -58,74 +59,74 @@ export const SingleCard = () => {
 
   return (
     <>
-      { showadded ? (
+      {showadded ? (
         <h2 id="res_success">Card added successfully!</h2>
       ) : (
         <>
-        <div id="singlecard_container">
-        <div id="singlecard_left">
-          <img
-            id="img_radius"
-            src={currentCard?.image_uris.normal}
-            width="400px"
-          />
-        </div>
-        <div id="singlecard_right">
-          <div>
-            <p>
-              <b>Name:</b> {currentCard?.name}
-            </p>
-            <p>
-              <b>Type:</b> {currentCard?.type_line}
-            </p>
-            <p>
-              <b>Description:</b>
-              <br />
-              {currentCard?.oracle_text}
-            </p>
-            <p>
-              <b>Power/Toughness:</b> {currentCard?.power}/
-              {currentCard?.toughness}
-            </p>
-            <p id="italic">
-              <b>Illustrated by</b> {currentCard?.artist}
-            </p>
-          </div>
-          <div id="sellcard_form">
-            <form id="singlesell_submit" onSubmit={handleSubmit}>
+          <div id="singlecard_container">
+            <div id="singlecard_left">
+              <img
+                id="img_radius"
+                src={currentCard?.image_uris.normal}
+                width="400px"
+              />
+            </div>
+            <div id="singlecard_right">
               <div>
-                <input
-                  type="number"
-                  min="1"
-                  name="qty"
-                  id="qty"
-                  placeholder="Quantity"
-                  default="1"
-                  onChange={onChangeHandler}
-                />
-                <div className="input-icon input-icon-right">
-                  <input
-                    type="number"
-                    name="price"
-                    id="price"
-                    min="1.00"
-                    step="any"
-                    placeholder="Price"
-                    onChange={onChangeHandler}
-                  />
-                  <i>€</i>
-                </div>
+                <p>
+                  <b>Name:</b> {currentCard?.name}
+                </p>
+                <p>
+                  <b>Type:</b> {currentCard?.type_line}
+                </p>
+                <p>
+                  <b>Description:</b>
+                  <br />
+                  {currentCard?.oracle_text}
+                </p>
+                <p>
+                  <b>Power/Toughness:</b> {currentCard?.power}/
+                  {currentCard?.toughness}
+                </p>
+                <p id="italic">
+                  <b>Illustrated by</b> {currentCard?.artist}
+                </p>
               </div>
-              <button id="btn_sellcard" type="submit">
-                Sell Card
-              </button>
-            </form>
+              <div id="sellcard_form">
+                <form id="singlesell_submit" onSubmit={handleSubmit}>
+                  <div>
+                    <input
+                      type="number"
+                      min="1"
+                      name="qty"
+                      id="qty"
+                      placeholder="Quantity"
+                      default="1"
+                      onChange={onChangeHandler}
+                    />
+                    <div className="input-icon input-icon-right">
+                      <input
+                        type="number"
+                        name="price"
+                        id="price"
+                        min="1.00"
+                        step="any"
+                        placeholder="Price"
+                        onChange={onChangeHandler}
+                      />
+                      <i>€</i>
+                    </div>
+                  </div>
+                  <button id="btn_sellcard" type="submit">
+                    Sell Card
+                  </button>
+                </form>
+              </div>
+              <button id="sell_back_btn">Zurück</button>
+            </div>
           </div>
-          <button id="sell_back_btn">Zurück</button>
-        </div>
-      </div>
         </>
       )}
     </>
-  )
+  );
 };

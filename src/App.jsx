@@ -21,8 +21,10 @@ import MyCards from "./components/MyCards";
 import { stateContext } from "./context/stateContext.jsx";
 import { SingleCard } from "./components/SingleCard";
 import { Checkout } from "./components/Checkout";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function App() {
+const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -35,7 +37,6 @@ function App() {
   useEffect(() => {
     if (!localStorage.getItem("cart")) {
       localStorage.setItem("cart", JSON.stringify([]));
-      console.log(JSON.parse(localStorage.getItem("cart")));
     } else {
       setCart(JSON.parse(localStorage.getItem("cart")));
     }
@@ -54,7 +55,7 @@ function App() {
         localStorage.removeItem("token");
         setToken(null);
         setLoadingAuthRequest(false);
-        console.log(error.message);
+        toast.error(error.message);
       }
     };
     token && validateToken();
@@ -88,6 +89,18 @@ function App() {
         setCart,
       }}
     >
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <div className="wrapper">
         <div className="content_container">
           <div className="header">
@@ -126,6 +139,6 @@ function App() {
       </div>
     </stateContext.Provider>
   );
-}
+};
 
 export default App;

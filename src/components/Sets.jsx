@@ -22,20 +22,21 @@ const Sets = () => {
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
-  const currentPosts = sets && sets.data.filter((cardobject) => cardobject.image_uris).slice(firstPostIndex, lastPostIndex);
-  const totalPosts = sets && sets.data.filter((cardobject) => cardobject.image_uris).length;
-
-  console.log("sets:", sets && sets);
-  console.log("currentPosts:", currentPosts);
-  console.log("lastPostIndex:", lastPostIndex);
-  console.log("firstPostIndex:", firstPostIndex);
-  console.log("setslength:", totalPosts);
+  const currentPosts =
+    sets &&
+    sets.data
+      .filter((cardobject) => cardobject.image_uris)
+      .slice(firstPostIndex, lastPostIndex);
+  const totalPosts =
+    sets && sets.data.filter((cardobject) => cardobject.image_uris).length;
 
   return (
     <>
       <div id="set_display">
-      
-        {currentPosts && currentPosts.filter((cardobject) => cardobject.image_uris).map((card) => {
+        {currentPosts &&
+          currentPosts
+            .filter((cardobject) => cardobject.image_uris)
+            .map((card) => {
               return (
                 <div id="display_singlecard" key={card.id}>
                   <img
@@ -60,16 +61,15 @@ const Sets = () => {
                 </div>
               );
             })}
-            
-      </div>    
+      </div>
       <div id="pagination_sets">
-    <Pagination
-        totalPosts={totalPosts}
-        postPerPage={postPerPage}
-        setCurrentPage={setCurrentPage}
-        currentPage={currentPage}
-      />
-    </div>  
+        <Pagination
+          totalPosts={totalPosts}
+          postPerPage={postPerPage}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
+      </div>
     </>
   );
 };

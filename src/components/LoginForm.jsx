@@ -4,9 +4,16 @@ import { useState, useContext } from "react";
 import { stateContext } from "../context/stateContext.jsx";
 import Loading from "./Loading";
 import { loginUser } from "../utils/authenticationUtils";
+import { toast } from "react-toastify";
 
 const LoginForm = () => {
-  const { isAuthenticated, setToken, setIsAuthenticated, loadingAuthRequest, setLoadingAuthRequest } = useContext(stateContext)
+  const {
+    isAuthenticated,
+    setToken,
+    setIsAuthenticated,
+    loadingAuthRequest,
+    setLoadingAuthRequest,
+  } = useContext(stateContext);
 
   const [{ email, password }, setFormState] = useState({
     email: "",
@@ -29,7 +36,7 @@ const LoginForm = () => {
       localStorage.setItem("token", data.token);
     } catch (error) {
       setLoadingAuthRequest(false);
-      console.log(error.message);
+      toast.error(error.message);
     }
   };
 

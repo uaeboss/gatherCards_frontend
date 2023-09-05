@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -53,7 +54,6 @@ body::-webkit-scrollbar{
 .sidenavl {
   grid-area: sidenavl;
   background-color: #fff;
-  
 }
 
 .sidenavr {
@@ -85,22 +85,22 @@ body::-webkit-scrollbar{
   width: 100px;
   margin: 0 auto;
   height: 100px;
-	background-color: #f5f5f5;
+  background-color: #f5f5f5;
   display: flex;
-	align-items: center;
-	justify-content: center;
+  align-items: center;
+  justify-content: center;
   margin: 40px;
   &.top {
-    box-shadow: 0px -15px 10px -15px #111;    
+    box-shadow: 0px -15px 10px -15px #111;
   }
   &.bottom {
-    box-shadow: 0px 15px 10px -15px #111;    
+    box-shadow: 0px 15px 10px -15px #111;
   }
   &.left {
-    box-shadow: -15px 0px 10px -15px #111;    
+    box-shadow: -15px 0px 10px -15px #111;
   }
   &.right {
-    box-shadow: 15px 0px 10px -15px #111;    
+    box-shadow: 15px 0px 10px -15px #111;
   }
 }
 

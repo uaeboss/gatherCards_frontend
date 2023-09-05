@@ -2,10 +2,9 @@ import axios from "axios";
 import "./css/Marketplace.css";
 import { useEffect, useState } from "react";
 import { MarketplaceCards } from "./MarketplaceCards";
+import { toast } from "react-toastify";
 
 export const Marketplace = () => {
-  // const formatUrl = "https://api.scryfall.com/cards/search?include_extras=true&include_variations=true&order=set&q=e%3Awoe&unique=prints";
-
   const [availableCards, setAvailableCards] = useState([]);
 
   useEffect(() => {
@@ -16,7 +15,7 @@ export const Marketplace = () => {
         );
         setAvailableCards(data);
       } catch (error) {
-        console.log(error);
+        toast.error(error);
       }
     };
     getAvailableCards();

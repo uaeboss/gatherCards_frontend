@@ -8,7 +8,7 @@ export const MarketplaceCards = ({
   qty,
   price,
   image,
-  seller
+  seller,
 }) => {
   const { cart, setCart } = useContext(stateContext);
 
@@ -18,18 +18,18 @@ export const MarketplaceCards = ({
       let newCart = cart.map((e) =>
         existingCard.cardId === e.cardId ? { ...e, amount: (e.amount += 1) } : e
       );
-      localStorage.setItem("cart",JSON.stringify(newCart))
+      localStorage.setItem("cart", JSON.stringify(newCart));
       setCart(newCart);
     } else {
       let currentCard = { cardId, name, qty, price, image, seller, amount: 1 };
-      cart && localStorage.setItem("cart",JSON.stringify([...cart, currentCard]))
-      cart &&  setCart([...cart, currentCard]);
+      cart &&
+        localStorage.setItem("cart", JSON.stringify([...cart, currentCard]));
+      cart && setCart([...cart, currentCard]);
     }
   };
 
   return (
     <>
-
       <div id="marketplacecards_container">
         <img id="border_radius" src={image} width="250px" />
         <div id="marketplacecards_text">
