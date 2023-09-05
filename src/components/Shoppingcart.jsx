@@ -5,6 +5,7 @@ import "./css/Shoppingcart.css";
 import paypal from "../assets/paypal.png";
 import creditcard from "../assets/creditcard.png";
 import { toast } from "react-toastify";
+import PaymentLoading from "./PaymentLoading.jsx";
 
 const Shoppingcart = () => {
   const { cart, setCart } = useContext(stateContext);
@@ -17,7 +18,7 @@ const Shoppingcart = () => {
   const [showPaymentDetails, setShowPaymentDetails] = useState(false);
   const [paypalChecked, setPaypalChecked] = useState(false);
   const [creditCardChecked, setCreditCardChecked] = useState(false);
-  const [checkboxes, setCheckboxes] = useState({});
+  const [paymentLoading, setPaymentLoading] = useState(false);
 
   const handlePaypalChange = () => {
     setPaypalChecked(true);
@@ -60,12 +61,19 @@ const Shoppingcart = () => {
       toast("Please select a payment option!");
     } else {
       setCart([]);
-      navigate("checkout");
+      setPaymentLoading(true)
       setTimeout(() => {
-        navigate(`/`, { replace: true });
-      }, 3000);
+        setPaymentLoading(false)
+        navigate(`checkout`, { replace: true });
+        setTimeout(() => {
+          setPaymentLoading(false)
+          navigate(`/`, { replace: true });
+        }, 3000);
+      }, 5000);
     }
   };
+
+if (paymentLoading) return <PaymentLoading />;
 
   return (
     <>
