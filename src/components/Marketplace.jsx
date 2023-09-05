@@ -20,7 +20,7 @@ export const Marketplace = () => {
     };
     getAvailableCards();
   }, []);
-
+  
   return (
     <>
       <div id="marketplace_container">
