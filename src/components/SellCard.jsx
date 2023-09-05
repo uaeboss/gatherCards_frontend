@@ -38,6 +38,7 @@ const SellCard = ({ search }) => {
   return (
     <>
       <div id="createcard_container">
+        <div className="searchform_container">
         <div id="form_size_createcard">
           <form onSubmit={handleSearchSubmit}>
             <input
@@ -52,6 +53,7 @@ const SellCard = ({ search }) => {
               Search
             </button>
           </form>
+        </div>
         </div>
       </div>
       <div id="search_results">

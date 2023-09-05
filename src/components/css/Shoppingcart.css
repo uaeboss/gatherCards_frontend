@@ -6,6 +6,7 @@
   align-items: center;
   padding-top: 20px;
   padding-bottom: 5px;
+  font-size: 1.2rem;
 }
 
 #shop_cart_qty {
@@ -31,7 +32,7 @@
 
 .sc_container {
   display: grid;
-  grid-template-columns: 150px 345px 0.95fr 0.4fr;
+  grid-template-columns: 216px 418px 0.95fr 0.4fr;
   width: 40vw;
   grid-template-rows: 1fr;
   grid-auto-columns: 1fr;
@@ -42,6 +43,7 @@
 }
 .sc_container > div {
   font-weight: bold;
+  font-size: 1.4rem;
 }
 
 .sc_quantity {
@@ -179,6 +181,7 @@
     justify-content: flex-start;
     flex-direction: column;
     width: 70%;
+    color: #000;
   }
 
   #payment_flex {
@@ -200,8 +203,20 @@
     margin: 20px 0 0 0;
   }
 
+  #label_space > input[type=text] {
+    background-color: #61892F;
+    color: #000;
+  }
+
   #input_width {
     width: 70%;
     display: flex;
     justify-content: flex-start;
+  }
+
+#cart_container h2 {
+    color: #61892F;
+    margin-top: 50px;
+    font-size: 2.2rem;
+    text-shadow: #86c232 1px 1px 1px;
   }

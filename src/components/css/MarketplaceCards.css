@@ -1,7 +1,7 @@
 #marketplacecards_container {
     padding: 20px;
     border-radius: 15px;
-    background-color: #949fa8;
+    background-color: #474b4f;
     color: #fff;
     margin-top: 50px;
     box-shadow: 0 0 10px #000;
@@ -11,8 +11,23 @@
 }
 
 #marketplacecards_add_btn {
+    background-color: #86c232;
+    color: #000;
+    transition: all .2s ease-in-out;
+    border: none;
     margin-top: 10px;
-}
+  }
+
+  #marketplacecards_add_btn:hover {
+    border-color: #86c232;
+    box-shadow: 0 0 10px #86c232;
+  }
+  
+  #marketplacecards_add_btn:active {
+      box-shadow: 0 0 10px #86c232;
+      transform:scale(0.9);
+      outline: none;
+    }
 
 #marketplacecards_text {
     margin-top: 15px;

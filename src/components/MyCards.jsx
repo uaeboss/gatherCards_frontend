@@ -2,10 +2,13 @@ import axios from "axios";
 import "./css/MyCard.css";
 import { useEffect, useState, useContext } from "react";
 import { stateContext } from "../context/stateContext";
+import { useNavigate } from "react-router-dom";
 
 const MyCards = () => {
   const [myCards, setMyCards] = useState([]);
+  const [showdeleted, setshowdeleted] = useState(false)
   const { user } = useContext(stateContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getMyCards = async () => {
@@ -29,7 +32,10 @@ const MyCards = () => {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
-      console.log("Card deleted successfully", response);
+      setshowdeleted(true)
+      setTimeout(() => {
+      setshowdeleted(false)
+      }, 2000);
     } catch (error) {
       console.error("Error deleting card", error);
     }
@@ -37,8 +43,11 @@ const MyCards = () => {
 
   return (
     <>
+    { showdeleted ? (
+        <h2 id="res_success">Card deleted successfully!</h2>
+      ) : (
     <div className="center_container">
-    <h2 id="h2_black">Your cards available on the marketplace:</h2>
+    <h2 id="h2_green">Your cards available on the marketplace:</h2>
       <div className="mycards_container">
         {myCards &&
           myCards
@@ -55,6 +64,7 @@ const MyCards = () => {
             ))}
       </div>
       </div>
+      )}
     </>
   );
 };

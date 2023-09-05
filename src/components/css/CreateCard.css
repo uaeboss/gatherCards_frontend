@@ -74,11 +74,6 @@ input:focus{
  width: 80vw;
 }
 
-h2 {
-    color: #fff;
-    margin-top: 20px;
-}
-
 #search_btn {
     height: 35px;
     margin-left: 15px;
@@ -95,4 +90,19 @@ h2 {
 #search_input {
     color: #fff;
     width: 100%;
+}
+
+.searchform_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchform_container > h2 {
+    color: #61892F;
+    margin-top: 50px;
+    font-size: 2.2rem;
+    text-shadow: #86c232 1px 1px 1px;
+    margin-bottom: 15px;
 }

@@ -1,5 +1,6 @@
 import "./css/Home.css";
 import woenews from "../assets/woenews.png";
+import mtga from "../assets/mtga.jpg"
 import twitch from "../assets/twitch.png"
 import { Link } from "react-router-dom";
 
@@ -7,6 +8,7 @@ const Home = () => {
   return (
     <>
     <div className="home_news_container">
+      <div id="push_left">
     <Link to="/magic/woe" >
       <div id="woe_news_container">
         <div id="woe_news_text_left">
@@ -17,6 +19,8 @@ const Home = () => {
           <img id="woenews_img_right" src={woenews} width="100%"/>
       </div>
       </Link>
+      </div>
+      <div id="push_right">
       <Link to="https://www.twitch.tv/directory/category/magic-the-gathering" >
       <div id="woe_news_container">
       <img id="woenews_img_left" src={twitch} width="80%"/>
@@ -27,6 +31,19 @@ const Home = () => {
           
       </div>
       </Link>
+      </div>
+      <div id="push_left">
+    <Link to="https://magic.wizards.com/de/mtgarena" >
+      <div id="woe_news_container">
+        <div id="woe_news_text_left">
+          <p id="p_announcement">Play your favorite card game now at :</p>
+          <h2>Magic the Gathering Arena</h2>
+          <p id="p_small">Available on Steam and Epic Games</p>
+          </div>
+          <img id="woenews_img_right" src={mtga} width="100%"/>
+      </div>
+      </Link>
+      </div>
       </div>
     </>
   );

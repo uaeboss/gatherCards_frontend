@@ -76,13 +76,7 @@ export const SingleCard = () => {
               <b>Name:</b> {currentCard?.name}
             </p>
             <p>
-              <b>Cost:</b>{" "}
-            </p>
-            <p>
               <b>Type:</b> {currentCard?.type_line}
-            </p>
-            <p>
-              <b>Symbol:</b>{" "}
             </p>
             <p>
               <b>Description:</b>
@@ -114,7 +108,7 @@ export const SingleCard = () => {
                     type="number"
                     name="price"
                     id="price"
-                    min="1"
+                    min="1.00"
                     step="any"
                     placeholder="Price"
                     onChange={onChangeHandler}
@@ -122,12 +116,12 @@ export const SingleCard = () => {
                   <i>€</i>
                 </div>
               </div>
-              <button id="sellcard_btn" type="submit">
+              <button id="btn_sellcard" type="submit">
                 Sell Card
               </button>
             </form>
           </div>
-          <button id="singlecard_btn">Zurück</button>
+          <button id="sell_back_btn">Zurück</button>
         </div>
       </div>
         </>

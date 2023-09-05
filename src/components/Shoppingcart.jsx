@@ -76,7 +76,7 @@ const Shoppingcart = () => {
           <h2>There is nothing in your shopping cart ...</h2>
         ) : (
           <div>
-            <h2>Your cart:</h2>
+            <h2 id="green">Your cart:</h2>
             <div className="sc_container">
               <div className="sc_quantity">Quantity:</div>
               <div className="sc_name">Name:</div>
@@ -132,7 +132,7 @@ const Shoppingcart = () => {
                               <label id="label_space">
                                 City:
                                 </label>
-                                <input type="text" />
+                                <input className="shopping_input" type="text" />
                               
                             </div>
                           
