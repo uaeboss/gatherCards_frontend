@@ -21,7 +21,7 @@ const NavigationProfile = () => {
         <div className="profile_detail">
           <Link to="/auth/shoppingcart">
             <div id="cart_number" style={cart_img}>
-              <h2>{cart.length}</h2>
+              {cart.length > 0 ? <h2>{cart.length}</h2> : null}
             </div>
           </Link>
           <ul>
