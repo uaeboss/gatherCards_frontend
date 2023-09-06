@@ -10,10 +10,10 @@ const Footer = () => {
 
   const onNewsletter = () => {
     if (email) {
-      toast("Awesome! You have signed up for our newsletter 🥳");
+      toast.success("Awesome! You have signed up for our newsletter 🥳");
       setEmail("");
     } else {
-      toast("Please enter your email address.");
+      toast.error("Please enter your email address.");
     }
   };
 

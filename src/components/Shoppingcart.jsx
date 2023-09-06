@@ -60,13 +60,12 @@ const Shoppingcart = () => {
     if (!creditCardChecked && !paypalChecked) {
       toast("Please select a payment option!");
     } else {
-      setCart([]);
       setPaymentLoading(true)
       setTimeout(() => {
         setPaymentLoading(false)
+        setCart([]);
         navigate(`checkout`, { replace: true });
         setTimeout(() => {
-          setPaymentLoading(false)
           navigate(`/`, { replace: true });
         }, 3000);
       }, 5000);
