@@ -2,9 +2,10 @@
   padding: 20px;
   border-radius: 15px;
   background-color: #474b4f;
+  background-image: linear-gradient(to top, #474b4f 0%, white 80%);
   color: #fff;
   margin-top: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 8px 8px -6px rgb(161, 163, 164);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
