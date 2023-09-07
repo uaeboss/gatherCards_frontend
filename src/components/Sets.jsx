@@ -34,7 +34,7 @@ const Sets = () => {
   return (
     <>
       <div id="back_btn_sets">
-        <button id="btn_sets" onClick={() => navigate(-1)} >Back to overview</button>
+        <button id="btn_sets" onClick={() => navigate("/magic")} >Back to overview</button>
       </div>
       <div id="set_display">
         {currentPosts &&

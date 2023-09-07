@@ -42,7 +42,7 @@ const NavigationProfile = () => {
               <>
                 <li>
                   <Link id="login_registration_link" to="/auth/create">
-                    Sell Card
+                    Sell card
                   </Link>
                 </li>
                 <Link id="login_registration_link" to="/auth/mycards">
