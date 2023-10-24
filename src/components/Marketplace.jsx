@@ -24,12 +24,29 @@ export const Marketplace = () => {
     };
     getAvailableCards();
   }, []);
-  
+
   return (
     <>
       <div id="marketplace_container">
         {loading ? (
-          <Loading />
+          <>
+            <h3>
+              Aufgrund der Verwendung von der kostenfreien Version von
+              render.com kann es einige Zeit dauern bis die Inhalte verfügbar
+              sind.
+            </h3>
+            <br />
+            <br />
+            <h3>
+              Due to the use of the free version of render.com, it may take some
+              time until the content is available.
+            </h3>
+            <br />
+            <br />
+            <br />
+            <br />
+            <Loading />
+          </>
         ) : (
           availableCards?.map((card) => (
             <div key={card._id}>
